@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+/*
+ * KUCH brand fonts are loaded via next/font/local in app/layout.tsx:
+ *   Unbounded  -> CSS var --font-unbounded  (display / headlines, Latin + Cyrillic)
+ *   Golos Text -> CSS var --font-golos      (body / text, Latin + Cyrillic)
+ * The theme below maps those to Tailwind's font-display / font-sans utilities.
+ */
+
+/* ─── Tailwind v4 theme tokens ───────────────────────────────────────────── */
+@theme {
+  /* Brand colors (Kuch brandbook) */
+  --color-kuch-black: #101010;
+  --color-kuch-pink: #ff61e5;
+  --color-kuch-pink-light: #ffbef4;
+  --color-kuch-coral: #ff618e;
+  --color-kuch-red: #ff0048;
+  --color-kuch-blue: #95b1ff;
+  --color-kuch-white: #ffffff;
+
+  /* Font families → generates `font-display` and `font-sans` utilities */
+  --font-display: var(--font-unbounded), system-ui, sans-serif;
+  --font-sans: var(--font-golos), system-ui, sans-serif;
+
+  /* Keyframes */
+  --animate-marquee: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Subtle RGB-split glitch for the rare "glitch moment" */
+@keyframes kuch-glitch {
+  0%, 92%, 100% {
+    transform: translate(0);
+    text-shadow: none;
+  }
+  93% {
+    transform: translate(-2px, 1px);
+    text-shadow: 2px 0 var(--color-kuch-pink), -2px 0 var(--color-kuch-blue);
+  }
+  95% {
+    transform: translate(2px, -1px);
+    text-shadow: -2px 0 var(--color-kuch-pink), 2px 0 var(--color-kuch-blue);
+  }
+  97% {
+    transform: translate(-1px, 0);
+    text-shadow: 1px 0 var(--color-kuch-coral), -1px 0 var(--color-kuch-blue);
+  }
+}
+
+/* ─── Base styles ────────────────────────────────────────────────────────── */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-kuch-black);
+  color: var(--color-kuch-white);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-kuch-pink);
+  color: var(--color-kuch-black);
+}
+
+.font-display {
+  font-feature-settings: 'kern' 1;
+}
+
+.v1-scope {
+  --font-display: var(--font-unbounded), system-ui, sans-serif;
+  --font-sans: var(--font-golos), system-ui, sans-serif;
+}
+
+/* ─── Reduced motion ─────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}

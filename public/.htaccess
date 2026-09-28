@@ -1,0 +1,5 @@
+RewriteEngine On
+
+# Old /v1 URLs redirect to the site root.
+RewriteRule ^v1/?$ / [R=301,L]
+RewriteRule ^v1/(.*)$ /$1 [R=301,L]

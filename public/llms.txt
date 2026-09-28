@@ -1,0 +1,62 @@
+# KUCH — Marketing Agency
+
+## English
+
+KUCH is a full-cycle marketing agency based in Tashkent, Uzbekistan.
+Slogan: "WE ARE NOT AFRAID OF COMPLEXITY" (МЫ НЕ БОИМСЯ СЛОЖНОГО).
+Core values: Strength · Hard Work · Results.
+Voice: Direct · Confident · No fluff · To the point.
+
+### Services
+- Marketing Strategy (/services/marketing-strategy) — Market research, positioning, KPI roadmap. From $3,000/project.
+- Brand Strategy (/services/brand-strategy) — Brand platform, archetype, voice, promise. From $4,000/project.
+- Communication Strategy (/services/communication-strategy) — Key messages, tone of voice, content strategy. From $2,500/project.
+- Ad Campaign (/services/ad-campaign) — Creative concept through media buying and analytics. From $5,000/project.
+- Outsource Marketing (/services/outsource-marketing) — Full marketing department as a service. From $1,500/month.
+- Branding (/services/branding) — Logo, visual identity, brand book. From $6,000/project.
+
+### Site Sections
+- Homepage (/) — Landing page with hero, about, team, services, pricing, cases, blog, rating, talks, contact.
+- Services (/services) — Overview of all 6 agency services.
+- Pricing (/pricing) — USD price ranges for each service.
+- Cases (/cases) — Portfolio: KUCH × Wellco, KUCH × GRAVITY, and more.
+- Blog (/blog) — Articles on marketing, branding, and strategy.
+- Rating (/rating) — Agency performance metrics and market positioning.
+- Kuch Talks (/kuch-talks) — Video interviews and conversations with industry experts.
+- Brief (/brief) — Online project brief form (multi-step).
+- Contact (/contact) — Contact information and lead form.
+
+### Machine-Readable Feeds
+- Sitemap: https://kuch.agency/sitemap.xml
+- RSS: https://kuch.agency/rss.xml
+
+### Contact
+Email: hello@kuch.agency | Telegram: https://t.me/kuch_agency | Instagram: https://www.instagram.com/kuch.agency
+
+---
+
+## Русский
+
+KUCH — маркетинговое агентство полного цикла. Ташкент, Узбекистан.
+Слоган: МЫ НЕ БОИМСЯ СЛОЖНОГО.
+Столпы: Сила · Тяжёлая работа · Результат.
+Голос: Прямо · Уверенно · Без воды · По делу.
+
+### Услуги
+- Маркетинговая стратегия (/services/marketing-strategy) — от $3 000 / проект
+- Бренд-стратегия (/services/brand-strategy) — от $4 000 / проект
+- Коммуникационная стратегия (/services/communication-strategy) — от $2 500 / проект
+- Рекламная кампания (/services/ad-campaign) — от $5 000 / проект
+- Аутсорс-маркетинг (/services/outsource-marketing) — от $1 500 / месяц
+- Брендинг (/services/branding) — от $6 000 / проект
+
+### Разделы сайта
+- Главная (/) — Лендинг: о нас, команда, услуги, прайс, кейсы, блог, рейтинг, kuch talks, контакты.
+- Услуги (/services) — Все 6 услуг агентства.
+- Прайс (/pricing) — Ценовые диапазоны в USD.
+- Кейсы (/cases) — Портфолио проектов.
+- Блог (/blog) — Статьи о маркетинге, брендинге и стратегии.
+- Рейтинг (/rating) — Позиции агентства в отраслевых рейтингах.
+- Kuch Talks (/kuch-talks) — Видео-интервью с экспертами.
+- Онлайн Бриф (/brief) — Форма для заявки на проект.
+- Контакт (/contact) — Контактная информация и форма обратной связи.
