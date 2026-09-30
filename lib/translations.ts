@@ -77,14 +77,14 @@ export const translations = {
     blog: {
       badge: 'БЛОГ',
       title: 'ЗНАЕМ — РАССКАЗЫВАЕМ',
-      subtitle: 'Разбираем практики маркетинга, брендинга и бизнеса в Центральной Азии.',
+      subtitle: 'Блог KUCH: экспертный взгляд на маркетинг, бренд и стратегию.',
       allArticles: 'Все статьи',
       readingTime: 'мин',
     },
     talks: {
-      badge: 'KUCH TALKS',
+      badge: 'SOON...',
       tag: 'KUCH TALKS',
-      soonBadge: 'СКОРО...',
+      soonBadge: 'SOON...',
       title: 'KUCH TALKS',
       desc: 'KUCH Talks — разговоры о том, как строится сильный бренд, от людей, которые это делают.',
       allTalks: 'Все выпуски',
@@ -260,12 +260,12 @@ export const translations = {
     blog: {
       badge: 'BLOG',
       title: 'BILAMIZ — BO\'LISHAMIZ',
-      subtitle: 'Markaziy Osiyoda marketing, brending va biznes amaliyotlarini tahlil qilamiz.',
+      subtitle: 'KUCH blogi: marketing, brend va strategiyaga ekspert nigohi.',
       allArticles: 'Barcha maqolalar',
       readingTime: 'daq',
     },
     talks: {
-      badge: 'KUCH TALKS',
+      badge: 'SOON...',
       tag: 'KUCH TALKS',
       soonBadge: 'SOON...',
       title: 'KUCH TALKS',
@@ -292,7 +292,7 @@ export const translations = {
       email: 'EMAIL',
       phone: 'TELEFON',
       address: 'MANZIL',
-      addressText: 'Toshkent sh., Mirobod t-ni, Nukus ko\'ch., 29',
+      addressText: 'Toshkent, Damariq, 41',
       socials: 'IJTIMOIY TARMOQLAR',
     },
     brief: {

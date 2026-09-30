@@ -14,7 +14,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params
-  const service = services.find(s => s.slug === slug)
+  const service = services.find(s => s.slug === slug || (slug === 'brand-identity' && s.slug === 'branding'))
   if (!service) return {}
   return pageMetadata({
     title: service.title,
@@ -29,7 +29,7 @@ export default async function ServiceDetailPage({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const service = services.find(s => s.slug === slug)
+  const service = services.find(s => s.slug === slug || (slug === 'brand-identity' && s.slug === 'branding'))
   if (!service) notFound()
 
   const svcJsonLd = serviceJsonLd({

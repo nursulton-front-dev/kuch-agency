@@ -175,7 +175,7 @@ const initialCases: CaseAdminItem[] = [
     year: 2026,
     desc_ru: 'Разработка бренда экосистемы логистических услуг.',
     desc_uz: 'Logistika xizmatlari ekotizimi brendini ishlab chiqish.',
-    published: false,
+    published: true,
   },
   {
     id: 'case-5',
