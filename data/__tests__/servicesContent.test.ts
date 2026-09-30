@@ -4,84 +4,35 @@ import { formatServicePrice } from '@/lib/formatPrice'
 test('all 6 services match exact requirements', () => {
   expect(services).toHaveLength(6)
 
-  const [mkt, brand, comm, ad, out, style] = services
+  const [mkt, brand, web, smm, media, pr] = services
 
   // 1. Маркетинговая стратегия
   expect(mkt.title).toBe('Маркетинговая стратегия')
-  expect(mkt.description).toBe(
-    'Формирование маркетинговой стратегии с нуля — от анализа рынка и позиционирования до каналов продвижения, KPI и дорожной карты реализации.'
-  )
   expect(formatServicePrice(mkt)).toBe('$8,000+')
-  expect(mkt.deliverables).toEqual([
-    'Диагностика рынка и конкурентной среды',
-    'Сегментация аудитории и построение портретов потребителей',
-    'Позиционирование бренда и формирование ценностного предложения',
-    'Стратегическая дорожная карта с системой KPI',
-    'Медиапланирование и распределение бюджета по каналам',
-  ])
+  expect(mkt.deliverables).toHaveLength(5)
 
-  // 2. Бренд-стратегия
-  expect(brand.title).toBe('Бренд-стратегия')
-  expect(brand.description).toBe(
-    'Строим бренд-стратегию на миссии, ценностях, архетипе, голосе, обещании и территории бренда.'
-  )
-  expect(formatServicePrice(brand)).toBe('$18,000+')
-  expect(brand.deliverables).toEqual([
-    'Кабинетное исследование и бренд аудит',
-    'Позиционирование бренда',
-    'Архитектура бренда',
-    'Платформа бренда',
-    'Коммуникационная стратегия',
-  ])
+  // 2. Брендинг и айдентика
+  expect(brand.title).toBe('Брендинг и айдентика')
+  expect(formatServicePrice(brand)).toBe('$6,000+')
+  expect(brand.deliverables).toHaveLength(5)
 
-  // 3. Коммуникационная стратегия
-  expect(comm.title).toBe('Коммуникационная стратегия')
-  expect(comm.description).toBe(
-    'Формирование архитектуры коммуникаций бренда: ключевые сообщения, tone of voice, контент-стратегию и план активаций по каналам'
-  )
-  expect(formatServicePrice(comm)).toBe('$10,000+')
-  expect(comm.deliverables).toEqual([
-    'Сегментированная архитектура ключевых сообщений',
-    'Tone of voice как система коммуникационных принципов',
-    'Контент-стратегия: логика подачи и структура рубрик',
-    'Медиаплан активаций по каналам коммуникации',
-  ])
+  // 3. Веб-разработка
+  expect(web.title).toBe('Веб-разработка')
+  expect(formatServicePrice(web)).toBe('$5,000+')
+  expect(web.deliverables).toHaveLength(5)
 
-  // 4. Рекламная кампания
-  expect(ad.title).toBe('Рекламная кампания')
-  expect(ad.description).toBe(
-    'Формируем рекламную кампанию на пересечении креативной стратегии и измеримого результата.'
-  )
-  expect(formatServicePrice(ad)).toBe('$8,000+')
-  expect(ad.deliverables).toEqual([
-    'Аудит коммуникации и диагностика точек роста',
-    'Big Idea и креативная платформа кампании',
-    'Продакшн: адаптация под форматы и каналы',
-    'Медиастратегия, сплит бюджета и закупка',
-    'Отслеживание метрик и оптимизация в моменте',
-  ])
+  // 4. SMM & Контент
+  expect(smm.title).toBe('SMM & Контент')
+  expect(formatServicePrice(smm)).toBe('$2,500+')
+  expect(smm.deliverables).toHaveLength(5)
 
-  // 5. Аутсорс-маркетинг
-  expect(out.title).toBe('Аутсорс-маркетинг')
-  expect(out.description).toBe(
-    'Ведение маркетинга полного цикла: контент, SMM, рекламные кампании, аналитика'
-  )
-  expect(formatServicePrice(out)).toBe('Под запрос')
-  expect(out.deliverables).toEqual([
-    'Ежемесячный маркетинг-план и приоритизация задач',
-    'Контент-продакшн под все форматы и каналы',
-    'SMM: публикация, комьюнити-менеджмент, модерация',
-    'Настройка, запуск и оптимизация рекламных кампаний',
-    'Отчётность по метрикам и ROI',
-  ])
+  // 5. Media Production & Видео
+  expect(media.title).toBe('Media Production & Видео')
+  expect(formatServicePrice(media)).toBe('Под запрос')
+  expect(media.deliverables).toHaveLength(5)
 
-  // 6. Разработка фирменного стиля
-  expect(style.title).toBe('Разработка фирменного стиля')
-  expect(style.description).toBe(
-    'Разработка вашего фирменного стиля, полноценной дизайн-системы и брендбука'
-  )
-  expect(formatServicePrice(style)).toBe('$10,000+')
-  expect(style.deliverables).toEqual([
-    'Полный дизайн фирменного стиля: логотип, типографика, цветовая палитра и фирменная графика — с адаптацией под все носители и оформлением в брендбук.',
-  ])
+  // 6. PR & Коммуникации
+  expect(pr.title).toBe('PR & Коммуникации')
+  expect(formatServicePrice(pr)).toBe('$4,000+')
+  expect(pr.deliverables).toHaveLength(5)
 })

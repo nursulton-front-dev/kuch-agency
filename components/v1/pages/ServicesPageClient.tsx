@@ -44,7 +44,7 @@ export function ServicesPageClient() {
           </div>
         </Reveal>
 
-        <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => {
             const displayTitle = lang === 'uz' && service.title_uz ? service.title_uz : service.title
             const displayShort = lang === 'uz' && service.short_uz ? service.short_uz : service.short
@@ -54,13 +54,13 @@ export function ServicesPageClient() {
               : `$${service.priceFrom.toLocaleString()}+`
 
             return (
-              <li key={service.slug}>
-                <Reveal delay={(i % 3) * 0.08}>
+              <li key={service.slug} className="flex h-full flex-col">
+                <Reveal delay={(i % 3) * 0.08} className="flex h-full flex-1 flex-col">
                   <Link
                     href={`/services/${service.slug}`}
-                    className="group flex h-full flex-col justify-between border-2 border-kuch-white/15 bg-kuch-black p-6 text-kuch-white transition-colors duration-200 hover:border-kuch-pink"
+                    className="group flex h-full flex-1 flex-col justify-between border-2 border-kuch-white/15 bg-kuch-black p-6 sm:p-8 text-kuch-white transition-colors duration-200 hover:border-kuch-pink"
                   >
-                    <div>
+                    <div className="flex flex-col flex-1">
                       <div className="flex items-start justify-between">
                         <Icon
                           name={service.icon}
@@ -71,14 +71,14 @@ export function ServicesPageClient() {
                           0{i + 1}
                         </span>
                       </div>
-                      <h2 className="mt-8 font-display text-2xl font-black uppercase leading-tight tracking-tight">
+                      <h2 className="mt-8 font-display text-2xl font-black uppercase leading-tight tracking-tight min-h-[3rem] flex items-center">
                         {displayTitle}
                       </h2>
-                      <p className="mt-3 font-sans text-sm text-kuch-white/70">
+                      <p className="mt-3 font-sans text-sm text-kuch-white/70 flex-1">
                         {displayShort}
                       </p>
                     </div>
-                    <div className="mt-8 flex items-end justify-between">
+                    <div className="mt-8 flex items-end justify-between pt-4 border-t border-white/5">
                       <span className="font-display text-lg font-black tracking-tight text-kuch-pink">
                         {priceText}
                       </span>

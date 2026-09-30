@@ -6,8 +6,12 @@ import { articles } from '@/data/articles'
 test('exactly 6 services with the required titles', () => {
   expect(services).toHaveLength(6)
   expect(services.map(s => s.title)).toEqual([
-    'Маркетинговая стратегия','Бренд-стратегия','Коммуникационная стратегия',
-    'Рекламная кампания','Аутсорс-маркетинг','Разработка фирменного стиля',
+    'Маркетинговая стратегия',
+    'Брендинг и айдентика',
+    'Веб-разработка',
+    'SMM & Контент',
+    'Media Production & Видео',
+    'PR & Коммуникации',
   ])
 })
 test('service slugs unique and prices ordered', () => {
