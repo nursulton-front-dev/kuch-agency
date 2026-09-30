@@ -31,7 +31,7 @@ export function ContactCta() {
   const instagram = settings.contacts.instagram || site.socials.instagram
 
   return (
-    <Section bg="blue" id="contact" className="pb-28 md:pb-32">
+    <Section bg="blue" id="contact">
       <Container>
         <div className="grid gap-12 xl:grid-cols-2 xl:gap-16">
           {/* Left: brief CTA + contacts */}
