@@ -2,8 +2,12 @@
 
 import React, { useState, useEffect } from 'react'
 import { Button } from '@/components/v1/ui/Button'
+import { useLanguage } from '@/lib/context/LanguageContext'
+import { useTranslation } from '@/lib/translations'
 
 export function StickyCta() {
+  const { lang } = useLanguage()
+  const t = useTranslation(lang)
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -15,7 +19,6 @@ export function StickyCta() {
         contactBounds.top < window.innerHeight &&
         contactBounds.bottom > 0
 
-      // Keep the fixed controls away from the form they would otherwise cover.
       setVisible(window.scrollY > window.innerHeight * 0.8 && !contactIsVisible)
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
@@ -28,21 +31,21 @@ export function StickyCta() {
     <div
       className="fixed bottom-6 right-6 z-40 hidden gap-2 md:flex md:flex-row"
       role="complementary"
-      aria-label="Быстрые действия"
+      aria-label="Quick actions"
     >
       <Button
         variant="ghost"
         href="/brief"
         className="shadow-lg shadow-black/50"
       >
-        Онлайн Бриф
+        {t.nav.brief}
       </Button>
       <Button
         variant="primary"
         href="/contact"
         className="shadow-lg shadow-kuch-pink/30"
       >
-        Оставить заявку
+        {t.nav.apply}
       </Button>
     </div>
   )

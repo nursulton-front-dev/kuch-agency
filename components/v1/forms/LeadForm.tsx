@@ -5,12 +5,17 @@ import { FormField } from './FormField'
 import { Button } from '@/components/v1/ui/Button'
 import { validateLead, type LeadPayload, type ValidationErrors } from './validate'
 import { submitLead } from './submitLead'
+import { useLanguage } from '@/lib/context/LanguageContext'
+import { useTranslation } from '@/lib/translations'
 
 interface LeadFormProps {
   source: string
 }
 
 export function LeadForm({ source }: LeadFormProps) {
+  const { lang } = useLanguage()
+  const t = useTranslation(lang)
+
   const [name, setName] = useState('')
   const [contact, setContact] = useState('')
   const [message, setMessage] = useState('')
@@ -41,9 +46,11 @@ export function LeadForm({ source }: LeadFormProps) {
   if (submitted) {
     return (
       <div className="flex flex-col gap-4 p-6 bg-kuch-black border border-kuch-pink text-kuch-white">
-        <p className="font-display text-lg font-bold text-kuch-pink">Заявка принята!</p>
+        <p className="font-display text-lg font-bold text-kuch-pink">
+          {lang === 'uz' ? 'Ariza qabul qilindi!' : 'Заявка принята!'}
+        </p>
         <p className="font-sans text-sm">
-          Мы свяжемся с вами в ближайшее время. Работаем прямо, уверенно, без воды.
+          {t.contact.successMsg}
         </p>
       </div>
     )
@@ -52,36 +59,36 @@ export function LeadForm({ source }: LeadFormProps) {
   return (
     <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5">
       <FormField
-        label="Имя"
+        label={t.contact.nameLabel}
         name="name"
         type="text"
         value={name}
         onChange={setName}
         error={errors.name}
         required
-        placeholder="Ваше имя"
+        placeholder={t.contact.namePlaceholder}
       />
       <FormField
-        label="Email или телефон"
+        label={t.contact.contactLabel}
         name="contact"
         type="text"
         value={contact}
         onChange={setContact}
         error={errors.contact}
         required
-        placeholder="info@kuch-group.uz или +998 97 719 94 47"
+        placeholder={t.contact.contactPlaceholder}
       />
       <FormField
-        label="Сообщение"
+        label={t.contact.messageLabel}
         name="message"
         type="textarea"
         value={message}
         onChange={setMessage}
         error={errors.message}
-        placeholder="Расскажите о вашем проекте"
+        placeholder={t.contact.messagePlaceholder}
       />
       <Button type="submit" variant="primary" disabled={submitting}>
-        {submitting ? 'Отправляем...' : 'Отправить'}
+        {submitting ? t.contact.submitting : t.contact.submitBtn}
       </Button>
     </form>
   )

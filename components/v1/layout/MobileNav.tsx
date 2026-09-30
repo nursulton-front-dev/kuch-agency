@@ -5,6 +5,8 @@ import { Link } from '@/components/link'
 import { site } from '@/data/site'
 import { Button } from '@/components/v1/ui/Button'
 import { Logo } from '@/components/v1/ui/Logo'
+import { useLanguage } from '@/lib/context/LanguageContext'
+import { useTranslation } from '@/lib/translations'
 
 interface MobileNavProps {
   open: boolean
@@ -12,6 +14,9 @@ interface MobileNavProps {
 }
 
 export function MobileNav({ open, onClose }: MobileNavProps) {
+  const { lang } = useLanguage()
+  const t = useTranslation(lang)
+
   // Lock body scroll when open
   useEffect(() => {
     if (open) {
@@ -26,12 +31,21 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
 
   if (!open) return null
 
+  const navItems = [
+    { href: '/cases', label: t.nav.cases },
+    { href: '/services', label: t.nav.services },
+    { href: '/#about', label: t.nav.about },
+    { href: '/blog', label: t.nav.blog },
+    { href: '/kuch-talks', label: t.nav.talks },
+    { href: '/contact', label: t.nav.contact },
+  ]
+
   return (
     <div
       className="fixed inset-0 z-50 flex flex-col bg-kuch-black"
       role="dialog"
       aria-modal="true"
-      aria-label="Мобильное меню"
+      aria-label="Mobile Menu"
     >
       {/* Header row */}
       <div className="flex items-center justify-between px-4 h-16 border-b border-white/10">
@@ -39,14 +53,14 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
           href="/"
           className="text-kuch-pink"
           onClick={onClose}
-          aria-label="KUCH — на главную"
+          aria-label="KUCH"
         >
           <Logo className="h-7 w-auto" />
         </Link>
         <button
-          className="text-white p-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-kuch-pink"
+          className="text-white p-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-kuch-pink cursor-pointer"
           onClick={onClose}
-          aria-label="Закрыть меню"
+          aria-label="Close"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
             <line x1="18" y1="6" x2="6" y2="18" />
@@ -56,9 +70,9 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
       </div>
 
       {/* Nav links */}
-      <nav className="flex-1 overflow-y-auto px-4 py-8" aria-label="Мобильная навигация">
+      <nav className="flex-1 overflow-y-auto px-4 py-8" aria-label="Mobile Navigation">
         <ul className="space-y-2">
-          {site.nav.map((item) => (
+          {navItems.map((item) => (
             <li key={item.href}>
               <Link
                 href={item.href}
@@ -102,10 +116,10 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
         {/* CTAs */}
         <div className="flex flex-col gap-3 mt-8">
           <Button variant="ghost" href="/brief" onClick={onClose}>
-            Онлайн Бриф
+            {t.nav.brief}
           </Button>
           <Button variant="primary" href="/contact" onClick={onClose}>
-            Оставить заявку
+            {t.nav.apply}
           </Button>
         </div>
       </nav>

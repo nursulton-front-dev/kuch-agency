@@ -1,11 +1,15 @@
+'use client'
+
 import React from 'react'
 import { Section } from '@/components/v1/ui/Section'
 import { Container } from '@/components/v1/ui/Container'
 import { Marquee } from '@/components/v1/ui/Marquee'
 import { Reveal } from '@/components/v1/ui/Reveal'
 import { clients } from '@/data/clients'
+import { useLanguage } from '@/lib/context/LanguageContext'
 
 export function TrustedBy() {
+  const { lang } = useLanguage()
   const marqueeItems = [...clients, ...clients].map((c) => c.name)
 
   return (
@@ -14,12 +18,14 @@ export function TrustedBy() {
         <Reveal>
           <div className="grid items-end gap-6 md:grid-cols-12">
             <p className="font-sans text-sm uppercase tracking-[0.2em] text-kuch-white/50 md:col-span-4">
-              Нам доверяют
+              {lang === 'uz' ? 'BIZGA ISHONISHADI' : 'Нам доверяют'}
             </p>
             <h2 className="font-display text-3xl font-black uppercase leading-[0.95] tracking-tight text-kuch-white md:col-span-8 md:text-4xl">
               <span className="text-kuch-pink">KUCH × Uklon</span>,{' '}
-              <span className="text-kuch-pink">KUCH × Wellco</span> и бренды,
-              которые выбрали результат.
+              <span className="text-kuch-pink">KUCH × Wellco</span>{' '}
+              {lang === 'uz'
+                ? 'va natijani tanlagan brendlar.'
+                : 'и бренды, которые выбрали результат.'}
             </h2>
           </div>
         </Reveal>

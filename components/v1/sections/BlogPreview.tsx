@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import Image from 'next/image'
 import { Link } from '@/components/link'
@@ -7,9 +9,12 @@ import { Button } from '@/components/v1/ui/Button'
 import { Tag } from '@/components/v1/ui/Tag'
 import { Reveal } from '@/components/v1/ui/Reveal'
 import { articles } from '@/data/articles'
+import { useLanguage } from '@/lib/context/LanguageContext'
+import { useTranslation } from '@/lib/translations'
 
-function formatDate(iso: string): string {
-  return new Intl.DateTimeFormat('ru-RU', {
+function formatDate(iso: string, lang: 'ru' | 'uz'): string {
+  const locale = lang === 'uz' ? 'uz-UZ' : 'ru-RU'
+  return new Intl.DateTimeFormat(locale, {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
@@ -17,7 +22,9 @@ function formatDate(iso: string): string {
 }
 
 export function BlogPreview() {
-  // Newest three articles, freshest first.
+  const { lang } = useLanguage()
+  const t = useTranslation(lang)
+
   const latest = [...articles]
     .sort((a, b) => b.date.localeCompare(a.date))
     .slice(0, 3)
@@ -29,16 +36,26 @@ export function BlogPreview() {
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <span className="font-display text-sm font-bold uppercase tracking-[0.2em] text-kuch-black">
-                Блог
+                {t.blog.badge}
               </span>
               <h2 className="mt-3 font-display text-5xl font-black uppercase leading-[0.9] tracking-tight text-kuch-black sm:text-6xl md:text-7xl">
-                Знаем —
-                <br />
-                рассказываем
+                {lang === 'uz' ? (
+                  <>
+                    BILAMIZ —
+                    <br />
+                    {"BO'LISHAMIZ"}
+                  </>
+                ) : (
+                  <>
+                    Знаем —
+                    <br />
+                    рассказываем
+                  </>
+                )}
               </h2>
             </div>
             <p className="max-w-sm font-sans text-base text-kuch-black/70">
-              Блог KUCH: экспертный взгляд на маркетинг, бренд и стратегию.
+              {t.blog.subtitle}
             </p>
           </div>
         </Reveal>
@@ -75,8 +92,8 @@ export function BlogPreview() {
                       {article.excerpt}
                     </p>
                     <div className="mt-6 flex items-center justify-between font-sans text-xs uppercase tracking-widest text-kuch-black/50 transition-colors group-hover:text-kuch-white/50">
-                      <span>{formatDate(article.date)}</span>
-                      <span>{article.readingMinutes} мин</span>
+                      <span>{formatDate(article.date, lang)}</span>
+                      <span>{article.readingMinutes} {t.blog.readingTime}</span>
                     </div>
                   </div>
                 </Link>
@@ -87,7 +104,7 @@ export function BlogPreview() {
 
         <div className="mt-10">
           <Button variant="dark" href="/blog">
-            Весь блог
+            {t.blog.allArticles}
           </Button>
         </div>
       </Container>

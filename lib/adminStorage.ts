@@ -45,6 +45,7 @@ export interface TalkAdminItem {
   speaker_uz: string
   duration: string
   video_url: string
+  video?: string
   cover: string
 }
 

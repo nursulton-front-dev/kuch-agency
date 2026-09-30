@@ -5,40 +5,69 @@ import { FormField } from './FormField'
 import { Button } from '@/components/v1/ui/Button'
 import { submitLead } from './submitLead'
 import { validateLead } from './validate'
-
-const STEPS = [
-  { id: 1, label: 'Тип проекта' },
-  { id: 2, label: 'Задача' },
-  { id: 3, label: 'Бюджет' },
-  { id: 4, label: 'Сроки' },
-  { id: 5, label: 'Контакты' },
-]
-
-const PROJECT_TYPES = [
-  'Маркетинговая стратегия',
-  'Бренд-стратегия',
-  'Коммуникационная стратегия',
-  'Рекламная кампания',
-  'Аутсорс-маркетинг',
-  'Разработка фирменного стиля',
-]
-
-const BUDGET_OPTIONS = [
-  'от $6 000',
-  '$6 000 — $10 000',
-  '$10 000 — $30 000',
-  'от $30 000',
-  'Не определён',
-]
-
-const TIMELINE_OPTIONS = [
-  '1 месяц',
-  '2–3 месяца',
-  '3–6 месяцев',
-  'Гибко',
-]
+import { useLanguage } from '@/lib/context/LanguageContext'
+import { useTranslation } from '@/lib/translations'
 
 export function BriefForm() {
+  const { lang } = useLanguage()
+  const t = useTranslation(lang)
+
+  const steps = lang === 'uz' ? [
+    { id: 1, label: 'Loyiha turi' },
+    { id: 2, label: 'Vazifa' },
+    { id: 3, label: 'Byudjet' },
+    { id: 4, label: 'Muddatlar' },
+    { id: 5, label: 'Kontaktlar' },
+  ] : [
+    { id: 1, label: 'Тип проекта' },
+    { id: 2, label: 'Задача' },
+    { id: 3, label: 'Бюджет' },
+    { id: 4, label: 'Сроки' },
+    { id: 5, label: 'Контакты' },
+  ]
+
+  const projectTypes = lang === 'uz' ? [
+    'Marketing strategiyasi',
+    'Brend strategiyasi',
+    'Kommunikatsiya strategiyasi',
+    'Reklama kampaniyasi',
+    'Autsors marketing',
+    'Firma uslubini ishlab chiqish',
+  ] : [
+    'Маркетинговая стратегия',
+    'Бренд-стратегия',
+    'Коммуникационная стратегия',
+    'Рекламная кампания',
+    'Аутсорс-маркетинг',
+    'Разработка фирменного стиля',
+  ]
+
+  const budgetOptions = lang === 'uz' ? [
+    '$6 000 dan',
+    '$6 000 — $10 000',
+    '$10 000 — $30 000',
+    '$30 000 dan',
+    'Noma\'lum',
+  ] : [
+    'от $6 000',
+    '$6 000 — $10 000',
+    '$10 000 — $30 000',
+    'от $30 000',
+    'Не определён',
+  ]
+
+  const timelineOptions = lang === 'uz' ? [
+    '1 oy',
+    '2–3 oy',
+    '3–6 oy',
+    'Moslashuvchan',
+  ] : [
+    '1 месяц',
+    '2–3 месяца',
+    '3–6 месяцев',
+    'Гибко',
+  ]
+
   const [step, setStep] = useState(1)
   const [projectType, setProjectType] = useState('')
   const [task, setTask] = useState('')
@@ -54,16 +83,16 @@ export function BriefForm() {
     const newErrors: Record<string, string> = {}
 
     if (step === 1 && !projectType) {
-      newErrors.projectType = 'Выберите тип проекта'
+      newErrors.projectType = lang === 'uz' ? 'Loyiha turini tanlang' : 'Выберите тип проекта'
     }
     if (step === 2 && task.trim().length < 10) {
-      newErrors.task = 'Опишите задачу (минимум 10 символов)'
+      newErrors.task = lang === 'uz' ? 'Vazifani tasvirlab bering (kamida 10 belgi)' : 'Опишите задачу (минимум 10 символов)'
     }
     if (step === 3 && !budget) {
-      newErrors.budget = 'Укажите бюджет'
+      newErrors.budget = lang === 'uz' ? 'Byudjetni ko\'rsating' : 'Укажите бюджет'
     }
     if (step === 4 && !timeline) {
-      newErrors.timeline = 'Укажите сроки'
+      newErrors.timeline = lang === 'uz' ? 'Muddatlarni ko\'rsating' : 'Укажите сроки'
     }
     if (step === 5) {
       const leadErrors = validateLead({ name, contact })
@@ -77,7 +106,7 @@ export function BriefForm() {
 
   function handleNext() {
     if (validateStep()) {
-      setStep((s) => Math.min(s + 1, STEPS.length))
+      setStep((s) => Math.min(s + 1, steps.length))
     }
   }
 
@@ -114,9 +143,11 @@ export function BriefForm() {
   if (submitted) {
     return (
       <div className="flex flex-col gap-4 p-8 bg-kuch-black border border-kuch-pink text-kuch-white">
-        <p className="font-display text-xl font-bold text-kuch-pink">Бриф принят!</p>
+        <p className="font-display text-xl font-bold text-kuch-pink">
+          {t.brief.successTitle}
+        </p>
         <p className="font-sans">
-          Мы изучим вашу задачу и свяжемся с вами. Работаем прямо, уверенно, без воды.
+          {t.brief.successDesc}
         </p>
       </div>
     )
@@ -125,8 +156,8 @@ export function BriefForm() {
   return (
     <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-6">
       {/* Progress indicator */}
-      <div className="flex items-center gap-2" role="list" aria-label="Шаги формы">
-        {STEPS.map((s) => (
+      <div className="flex items-center gap-2" role="list" aria-label="Steps">
+        {steps.map((s) => (
           <React.Fragment key={s.id}>
             <div
               role="listitem"
@@ -141,11 +172,10 @@ export function BriefForm() {
                 .filter(Boolean)
                 .join(' ')}
               aria-current={step === s.id ? 'step' : undefined}
-              aria-label={`Шаг ${s.id}: ${s.label}${step > s.id ? ' (завершён)' : ''}`}
             >
               {step > s.id ? '✓' : s.id}
             </div>
-            {s.id < STEPS.length && (
+            {s.id < steps.length && (
               <div
                 className={[
                   'flex-1 h-0.5 transition-colors',
@@ -158,15 +188,15 @@ export function BriefForm() {
       </div>
 
       <p className="font-display text-sm font-bold text-kuch-pink uppercase tracking-widest">
-        Шаг {step} / {STEPS.length} — {STEPS[step - 1].label}
+        {lang === 'uz' ? 'Qadam' : 'Шаг'} {step} / {steps.length} — {steps[step - 1].label}
       </p>
 
       {/* Step 1: Project type */}
       {step === 1 && (
         <div className="flex flex-col gap-3">
-          <p className="font-sans text-kuch-white text-sm mb-1">Выберите тип проекта:</p>
+          <p className="font-sans text-kuch-white text-sm mb-1">{t.brief.selectType}</p>
           <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-            {PROJECT_TYPES.map((pt) => (
+            {projectTypes.map((pt) => (
               <button
                 key={pt}
                 type="button"
@@ -196,23 +226,23 @@ export function BriefForm() {
       {/* Step 2: Task description */}
       {step === 2 && (
         <FormField
-          label="Опишите задачу"
+          label={t.brief.step1Title}
           name="task"
           type="textarea"
           value={task}
           onChange={setTask}
           error={errors.task}
           required
-          placeholder="Расскажите о проекте, целях, аудитории и ожидаемом результате"
+          placeholder={lang === 'uz' ? 'Loyiha, maqsadlar va kutilayotgan natijalar haqida so\'zlab bering' : 'Расскажите о проекте, целях, аудитории и ожидаемом результате'}
         />
       )}
 
       {/* Step 3: Budget */}
       {step === 3 && (
         <div className="flex flex-col gap-3">
-          <p className="font-sans text-kuch-white text-sm mb-1">Ориентировочный бюджет:</p>
+          <p className="font-sans text-kuch-white text-sm mb-1">{t.brief.step3Desc}</p>
           <div className="flex flex-col gap-2">
-            {BUDGET_OPTIONS.map((b) => (
+            {budgetOptions.map((b) => (
               <button
                 key={b}
                 type="button"
@@ -242,24 +272,24 @@ export function BriefForm() {
       {/* Step 4: Timeline */}
       {step === 4 && (
         <div className="flex flex-col gap-3">
-          <p className="font-sans text-kuch-white text-sm mb-1">Желаемые сроки:</p>
+          <p className="font-sans text-kuch-white text-sm mb-1">{t.brief.step4Desc}</p>
           <div className="flex flex-col gap-2">
-            {TIMELINE_OPTIONS.map((t) => (
+            {timelineOptions.map((item) => (
               <button
-                key={t}
+                key={item}
                 type="button"
                 onClick={() => {
-                  setTimeline(t)
+                  setTimeline(item)
                   setErrors({})
                 }}
                 className={[
                   'px-4 py-3 text-left font-sans text-sm border-2 transition-colors',
-                  timeline === t
+                  timeline === item
                     ? 'border-kuch-pink bg-kuch-pink text-kuch-black font-semibold'
                     : 'border-kuch-white text-kuch-white bg-transparent hover:border-kuch-pink hover:text-kuch-pink',
                 ].join(' ')}
               >
-                {t}
+                {item}
               </button>
             ))}
           </div>
@@ -275,24 +305,24 @@ export function BriefForm() {
       {step === 5 && (
         <div className="flex flex-col gap-5">
           <FormField
-            label="Имя"
+            label={t.contact.nameLabel}
             name="name"
             type="text"
             value={name}
             onChange={setName}
             error={errors.name}
             required
-            placeholder="Ваше имя"
+            placeholder={t.contact.namePlaceholder}
           />
           <FormField
-            label="Email или телефон"
+            label={t.contact.contactLabel}
             name="contact"
             type="text"
             value={contact}
             onChange={setContact}
             error={errors.contact}
             required
-            placeholder="info@kuch-group.uz или +998 97 719 94 47"
+            placeholder={t.contact.contactPlaceholder}
           />
         </div>
       )}
@@ -301,16 +331,16 @@ export function BriefForm() {
       <div className="flex gap-3 mt-2">
         {step > 1 && (
           <Button type="button" variant="ghost" onClick={handleBack}>
-            Назад
+            {t.brief.backBtn}
           </Button>
         )}
-        {step < STEPS.length ? (
+        {step < steps.length ? (
           <Button type="button" variant="primary" onClick={handleNext}>
-            Далее
+            {t.brief.nextBtn}
           </Button>
         ) : (
           <Button type="submit" variant="primary" disabled={submitting}>
-            {submitting ? 'Отправляем...' : 'Отправить бриф'}
+            {submitting ? t.contact.submitting : t.brief.submitBtn}
           </Button>
         )}
       </div>
