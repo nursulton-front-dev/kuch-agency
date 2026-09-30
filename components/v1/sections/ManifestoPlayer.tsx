@@ -1,22 +1,21 @@
 'use client'
 
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { manifesto } from '@/data/manifesto'
 import { cn } from '@/lib/utils'
+import { useLanguage, type Language } from '@/lib/context/LanguageContext'
 
-type Lang = keyof typeof manifesto.videos
-
-const LANGS: { id: Lang; label: string }[] = [
+const LANGS: { id: Language; label: string }[] = [
   { id: 'ru', label: 'Рус' },
   { id: 'uz', label: 'Uz' },
 ]
 
 export function ManifestoPlayer() {
-  const [lang, setLang] = useState<Lang>('ru')
+  const { lang, setLang } = useLanguage()
   const videoRef = useRef<HTMLVideoElement>(null)
   const resumeRef = useRef({ time: 0, playing: false })
 
-  function selectLang(next: Lang) {
+  function selectLang(next: Language) {
     if (next === lang) return
     const el = videoRef.current
     resumeRef.current = {

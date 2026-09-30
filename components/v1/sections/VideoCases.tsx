@@ -1,4 +1,6 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import Image from 'next/image'
 import { Link } from '@/components/link'
 import { Section } from '@/components/v1/ui/Section'
@@ -6,16 +8,18 @@ import { Container } from '@/components/v1/ui/Container'
 import { Button } from '@/components/v1/ui/Button'
 import { Reveal } from '@/components/v1/ui/Reveal'
 import { ManifestoPlayer } from '@/components/v1/sections/ManifestoPlayer'
-import { cases } from '@/data/cases'
+import { getStoredCases, type CaseAdminItem } from '@/lib/adminStorage'
+import { useLanguage } from '@/lib/context/LanguageContext'
+import { useTranslation } from '@/lib/translations'
 import { cn } from '@/lib/utils'
 
-const categoryLabel: Record<string, string> = {
-  Branding: 'BRANDING',
-  Production: 'PRODUCTION',
-  Marketing: 'MARKETING',
-}
-
 export function VideoCases() {
+  const { lang } = useLanguage()
+  const t = useTranslation(lang)
+  const [casesList] = useState<CaseAdminItem[]>(() =>
+    getStoredCases().filter((c) => c.published)
+  )
+
   return (
     <Section bg="black" id="cases">
       <Container>
@@ -23,10 +27,11 @@ export function VideoCases() {
           <div className="grid items-end gap-6 md:grid-cols-12">
             <div className="md:col-span-12">
               <span className="font-display text-sm font-bold uppercase tracking-[0.2em] text-kuch-pink">
-                Кейсы
+                {t.cases.tag}
               </span>
               <h2 className="mt-3 font-display text-5xl font-black uppercase leading-[0.88] tracking-tight text-kuch-white sm:text-6xl md:text-7xl lg:text-8xl">
-                В каждом бренде — <span className="text-kuch-pink">KUCH</span>
+                {lang === 'ru' ? 'В каждом бренде — ' : 'Har bir brendda — '}
+                <span className="text-kuch-pink">KUCH</span>
               </h2>
             </div>
           </div>
@@ -39,17 +44,20 @@ export function VideoCases() {
         </Reveal>
 
         <ul className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2">
-          {cases.map((item, i) => {
+          {casesList.map((item, i) => {
             const flagship = i < 2
+            const displayTitle = lang === 'uz' && item.title_uz ? item.title_uz : (item.title_ru || item.title_uz)
+            const displayCategory = lang === 'uz' && item.category_uz ? item.category_uz : (item.category_ru || item.category_uz)
+
             return (
               <li
-                key={item.slug}
+                key={item.id}
                 className={cn(flagship && 'sm:col-span-2')}
               >
                 <Reveal delay={(i % 2) * 0.08}>
                   <Link
                     href={`/cases/${item.slug}`}
-                    aria-label={item.title}
+                    aria-label={displayTitle}
                     className="group relative block overflow-hidden border-2 border-kuch-white/15 bg-kuch-black transition-colors duration-300 hover:border-kuch-pink"
                   >
                     <div
@@ -59,8 +67,8 @@ export function VideoCases() {
                       )}
                     >
                       <Image
-                        src={item.poster}
-                        alt={`${item.title} — кейс KUCH`}
+                        src={item.cover || '/images/cases/wellco.jpg'}
+                        alt={`${displayTitle} — кейс KUCH`}
                         fill
                         sizes={
                           flagship
@@ -69,19 +77,6 @@ export function VideoCases() {
                         }
                         className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                       />
-
-                      {item.video && (
-                        <video
-                          preload="none"
-                          poster={item.poster}
-                          muted
-                          loop
-                          playsInline
-                          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-0"
-                        >
-                          <source src={item.video} type="video/mp4" />
-                        </video>
-                      )}
 
                       <div
                         aria-hidden="true"
@@ -97,7 +92,7 @@ export function VideoCases() {
                             : 'text-[clamp(2.5rem,12vw,5rem)]'
                         )}
                       >
-                        {categoryLabel[item.category]}
+                        {displayCategory.toUpperCase()}
                       </span>
 
                       <span className="absolute left-5 top-5 font-display text-sm font-black uppercase tracking-tight text-kuch-white">
@@ -112,7 +107,7 @@ export function VideoCases() {
                     <div className="relative z-10 flex flex-col gap-2 p-5 md:p-6">
                       <div className="flex items-baseline justify-between gap-4">
                         <h3 className="font-display text-2xl font-black uppercase leading-tight tracking-tight text-kuch-white md:text-3xl">
-                          {item.title}
+                          {displayTitle}
                         </h3>
                         <span
                           aria-hidden="true"
@@ -121,11 +116,6 @@ export function VideoCases() {
                           →
                         </span>
                       </div>
-                      {item.result ? (
-                        <p className="font-display text-lg font-black tracking-tight text-kuch-pink md:text-xl">
-                          {item.result}
-                        </p>
-                      ) : null}
                     </div>
                   </Link>
                 </Reveal>
@@ -136,7 +126,7 @@ export function VideoCases() {
 
         <div className="mt-12">
           <Button variant="primary" href="/cases">
-            Все кейсы
+            {t.cases.allCases}
           </Button>
         </div>
       </Container>

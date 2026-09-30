@@ -7,16 +7,29 @@ import { Button } from '@/components/v1/ui/Button'
 import { Container } from '@/components/v1/ui/Container'
 import { Logo } from '@/components/v1/ui/Logo'
 import { MobileNav } from './MobileNav'
+import { useLanguage } from '@/lib/context/LanguageContext'
+import { useTranslation } from '@/lib/translations'
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const { lang, setLang } = useLanguage()
+  const t = useTranslation(lang)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 48)
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  const navItems = [
+    { href: '/cases', label: t.nav.cases },
+    { href: '/services', label: t.nav.services },
+    { href: '/#about', label: t.nav.about },
+    { href: '/blog', label: t.nav.blog },
+    { href: '/kuch-talks', label: t.nav.talks },
+    { href: '/contact', label: t.nav.contact },
+  ]
 
   return (
     <>
@@ -41,7 +54,7 @@ export function Header() {
 
             {/* Desktop nav */}
             <nav className="hidden lg:flex items-center gap-6" aria-label="Основная навигация">
-              {site.nav.map((item) => (
+              {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
@@ -52,8 +65,34 @@ export function Header() {
               ))}
             </nav>
 
-            {/* Desktop socials + CTAs */}
+            {/* Language switcher + Desktop socials + CTAs */}
             <div className="hidden lg:flex items-center gap-3">
+              {/* Language Switcher Pill */}
+              <div className="flex items-center p-0.5 bg-white/5 border border-white/15 rounded-full text-xs font-mono font-bold mr-1">
+                <button
+                  type="button"
+                  onClick={() => setLang('ru')}
+                  className={`px-2.5 py-1 rounded-full transition-all duration-200 ${
+                    lang === 'ru'
+                      ? 'bg-kuch-pink text-white shadow-md shadow-kuch-pink/30'
+                      : 'text-white/60 hover:text-white'
+                  }`}
+                >
+                  RU
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setLang('uz')}
+                  className={`px-2.5 py-1 rounded-full transition-all duration-200 ${
+                    lang === 'uz'
+                      ? 'bg-kuch-pink text-white shadow-md shadow-kuch-pink/30'
+                      : 'text-white/60 hover:text-white'
+                  }`}
+                >
+                  UZ
+                </button>
+              </div>
+
               {/* Instagram */}
               <Link
                 href={site.socials.instagram}
@@ -82,27 +121,50 @@ export function Header() {
 
               <div className="flex items-center gap-2 ml-2">
                 <Button variant="ghost" href="/brief">
-                  Онлайн Бриф
+                  {t.nav.brief}
                 </Button>
                 <Button variant="primary" href="/contact">
-                  Оставить заявку
+                  {t.nav.apply}
                 </Button>
               </div>
             </div>
 
-            {/* Mobile hamburger */}
-            <button
-              className="lg:hidden text-white p-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-kuch-pink"
-              onClick={() => setMenuOpen(true)}
-              aria-label="Открыть меню"
-              aria-expanded={menuOpen}
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <line x1="3" y1="12" x2="21" y2="12" />
-                <line x1="3" y1="18" x2="21" y2="18" />
-              </svg>
-            </button>
+            {/* Mobile hamburger & language switcher */}
+            <div className="flex items-center gap-3 lg:hidden">
+              <div className="flex items-center p-0.5 bg-white/10 rounded-full text-xs font-mono font-bold">
+                <button
+                  type="button"
+                  onClick={() => setLang('ru')}
+                  className={`px-2 py-0.5 rounded-full transition-all ${
+                    lang === 'ru' ? 'bg-kuch-pink text-white' : 'text-white/60'
+                  }`}
+                >
+                  RU
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setLang('uz')}
+                  className={`px-2 py-0.5 rounded-full transition-all ${
+                    lang === 'uz' ? 'bg-kuch-pink text-white' : 'text-white/60'
+                  }`}
+                >
+                  UZ
+                </button>
+              </div>
+
+              <button
+                className="text-white p-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-kuch-pink"
+                onClick={() => setMenuOpen(true)}
+                aria-label="Открыть меню"
+                aria-expanded={menuOpen}
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <line x1="3" y1="12" x2="21" y2="12" />
+                  <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+              </button>
+            </div>
           </div>
         </Container>
       </header>

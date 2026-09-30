@@ -1,12 +1,38 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import { Link } from '@/components/link'
 import { site } from '@/data/site'
 import { services } from '@/data/services'
 import { Container } from '@/components/v1/ui/Container'
 import { Logo } from '@/components/v1/ui/Logo'
+import { getStoredSettings, type AdminSettingsData } from '@/lib/adminStorage'
+import { useLanguage } from '@/lib/context/LanguageContext'
+import { useTranslation } from '@/lib/translations'
 
 export function Footer() {
   const year = new Date().getFullYear()
+  const { lang } = useLanguage()
+  const t = useTranslation(lang)
+  const [settings] = useState<AdminSettingsData>(() => getStoredSettings())
+
+  const phone = settings.contacts.phone || site.contacts.phone
+  const email = settings.contacts.email || site.contacts.email
+  const address =
+    lang === 'uz' && settings.contacts.address_uz
+      ? settings.contacts.address_uz
+      : settings.contacts.address_ru || site.contacts.address
+  const telegram = settings.contacts.telegram || site.socials.telegram
+  const instagram = settings.contacts.instagram || site.socials.instagram
+
+  const navItems = [
+    { href: '/cases', label: t.nav.cases },
+    { href: '/services', label: t.nav.services },
+    { href: '/#about', label: t.nav.about },
+    { href: '/blog', label: t.nav.blog },
+    { href: '/kuch-talks', label: t.nav.talks },
+    { href: '/contact', label: t.nav.contact },
+  ]
 
   return (
     <footer className="bg-kuch-black border-t border-white/10 pt-16 pb-8">
@@ -27,13 +53,12 @@ export function Footer() {
               <Logo className="h-7 w-auto" />
             </p>
             <p className="font-sans text-sm text-white/60 leading-relaxed mb-4">
-              Маркетинговое агентство полного цикла.<br />
-              МЫ НЕ БОИМСЯ СЛОЖНОГО.
+              {t.footer.motto}
             </p>
             {/* Socials */}
             <div className="flex gap-3">
               <Link
-                href={site.socials.instagram}
+                href={instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram KUCH"
@@ -44,7 +69,7 @@ export function Footer() {
                 </svg>
               </Link>
               <Link
-                href={site.socials.telegram}
+                href={telegram}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Telegram KUCH"
@@ -60,10 +85,10 @@ export function Footer() {
           {/* Navigation */}
           <div>
             <p className="font-sans font-semibold text-xs uppercase tracking-widest text-white/40 mb-4">
-              Навигация
+              {t.footer.nav}
             </p>
             <ul className="space-y-2">
-              {site.nav.map((item) => (
+              {navItems.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
@@ -79,47 +104,50 @@ export function Footer() {
           {/* Services */}
           <div>
             <p className="font-sans font-semibold text-xs uppercase tracking-widest text-white/40 mb-4">
-              Услуги
+              {t.footer.services}
             </p>
             <ul className="space-y-2">
-              {services.map((s) => (
-                <li key={s.slug}>
-                  <Link
-                    href={`/services/${s.slug}`}
-                    className="font-sans text-sm text-white/70 hover:text-kuch-pink transition-colors"
-                  >
-                    {s.title}
-                  </Link>
-                </li>
-              ))}
+              {services.map((s) => {
+                const displayTitle = lang === 'uz' && s.title_uz ? s.title_uz : s.title
+                return (
+                  <li key={s.slug}>
+                    <Link
+                      href={`/services/${s.slug}`}
+                      className="font-sans text-sm text-white/70 hover:text-kuch-pink transition-colors"
+                    >
+                      {displayTitle}
+                    </Link>
+                  </li>
+                )
+              })}
             </ul>
           </div>
 
           {/* Contacts */}
           <div>
             <p className="font-sans font-semibold text-xs uppercase tracking-widest text-white/40 mb-4">
-              Контакты
+              {t.footer.contacts}
             </p>
             <ul className="space-y-3">
               <li>
                 <a
-                  href={`mailto:${site.contacts.email}`}
+                  href={`mailto:${email}`}
                   className="font-sans text-sm text-white/70 hover:text-kuch-pink transition-colors"
                 >
-                  {site.contacts.email}
+                  {email}
                 </a>
               </li>
               <li>
                 <a
-                  href={`tel:${site.contacts.phone.replace(/\s/g, '')}`}
+                  href={`tel:${phone.replace(/\s/g, '')}`}
                   className="font-sans text-sm text-white/70 hover:text-kuch-pink transition-colors"
                 >
-                  {site.contacts.phone}
+                  {phone}
                 </a>
               </li>
               <li>
                 <address className="font-sans text-sm text-white/70 not-italic">
-                  {site.contacts.address}
+                  {address}
                 </address>
               </li>
             </ul>
@@ -129,11 +157,11 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="font-sans text-xs text-white/40">
-            © {year} {site.name}. Все права защищены.
+            © {year} {site.name}. {t.footer.rights}
           </p>
           <div className="flex gap-6">
             <span className="font-sans text-xs text-white/40">
-              Политика конфиденциальности
+              {t.footer.privacy}
             </span>
           </div>
         </div>
