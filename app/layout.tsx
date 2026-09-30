@@ -44,7 +44,7 @@ export default function RootLayout({
   return (
     <html
       lang="ru"
-      className={`h-full ${fontUnbounded.variable} ${fontGolos.variable}`}
+      className={`${fontUnbounded.variable} ${fontGolos.variable}`}
     >
       <head>
         <script
@@ -52,7 +52,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
         />
       </head>
-      <body className="min-h-full bg-kuch-black text-white font-sans">
+      <body className="bg-kuch-black text-white font-sans">
         <LanguageProvider>
           <LayoutWrapper>{children}</LayoutWrapper>
         </LanguageProvider>
