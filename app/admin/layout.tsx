@@ -10,7 +10,8 @@ import { createClient } from '@/lib/supabase/client'
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   const router = useRouter()
-  const isLoginPage = pathname === '/admin/login'
+  const normalizedPath = pathname ? pathname.replace(/\/$/, '') : ''
+  const isLoginPage = normalizedPath === '/admin/login'
 
   const [isChecking, setIsChecking] = useState(!isLoginPage)
   const [isAuthenticated, setIsAuthenticated] = useState(false)

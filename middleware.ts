@@ -44,10 +44,11 @@ export async function middleware(request: NextRequest) {
   const hasLocalAdminCookie = request.cookies.get('kuch_admin_session')?.value === 'true'
   const isAuthenticated = !!user || hasLocalAdminCookie
 
-  const isLoginPage = pathname === '/admin/login'
+  const cleanPathname = pathname ? pathname.replace(/\/$/, '') : ''
+  const isLoginPage = cleanPathname === '/admin/login'
 
   // If user visits /admin root directly, redirect to /admin/team or /admin/login
-  if (pathname === '/admin') {
+  if (cleanPathname === '/admin') {
     if (isAuthenticated) {
       return NextResponse.redirect(new URL('/admin/team', request.url))
     } else {
