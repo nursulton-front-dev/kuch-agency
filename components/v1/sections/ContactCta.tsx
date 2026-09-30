@@ -5,11 +5,16 @@ import { Section } from '@/components/v1/ui/Section'
 import { Container } from '@/components/v1/ui/Container'
 import { Button } from '@/components/v1/ui/Button'
 import { Reveal } from '@/components/v1/ui/Reveal'
-import { LeadForm } from '@/components/v1/forms/LeadForm'
+import dynamic from 'next/dynamic'
 import { site } from '@/data/site'
 import { getStoredSettings, type AdminSettingsData } from '@/lib/adminStorage'
 import { useLanguage } from '@/lib/context/LanguageContext'
 import { useTranslation } from '@/lib/translations'
+
+const LeadForm = dynamic(
+  () => import('@/components/v1/forms/LeadForm').then((mod) => mod.LeadForm),
+  { ssr: false }
+)
 
 export function ContactCta() {
   const { lang } = useLanguage()

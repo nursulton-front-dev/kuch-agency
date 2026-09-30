@@ -17,10 +17,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const [isAuthenticated, setIsAuthenticated] = useState(false)
 
   useEffect(() => {
-    if (isLoginPage) {
-      setIsChecking(false)
-      return
-    }
+    if (isLoginPage) return
 
     async function checkAuth() {
       setIsChecking(true)

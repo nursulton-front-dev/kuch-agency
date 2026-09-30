@@ -6,9 +6,14 @@ import { site } from '@/data/site'
 import { Button } from '@/components/v1/ui/Button'
 import { Container } from '@/components/v1/ui/Container'
 import { Logo } from '@/components/v1/ui/Logo'
-import { MobileNav } from './MobileNav'
+import dynamic from 'next/dynamic'
 import { useLanguage } from '@/lib/context/LanguageContext'
 import { useTranslation } from '@/lib/translations'
+
+const MobileNav = dynamic(
+  () => import('./MobileNav').then((mod) => mod.MobileNav),
+  { ssr: false }
+)
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false)

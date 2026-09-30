@@ -2,25 +2,50 @@ import createMDX from '@next/mdx'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Build static HTML/CSS/JS into /out so the site can run on cPanel's Apache
-  // hosting without a Node.js process.
-  output: 'export',
-  // cPanel serves generated assets directly; Next's on-demand image optimizer
-  // requires a Node.js server and is therefore disabled for this deployment.
+  // Gzip / Brotli compression
+  compress: true,
+
+  // Image optimization
   images: {
-    unoptimized: true,
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 2592000, // 30 days
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'uslrcbibqannepcttoqc.supabase.co',
+        port: '',
+        pathname: '/storage/v1/object/public/**',
+      },
+    ],
   },
-  // Generate /v1/index.html instead of /v1.html for Apache directory hosting.
+
+  // Package bundle optimization
+  experimental: {
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
+  },
+
   trailingSlash: true,
-  // Allow .mdx alongside .ts/.tsx so MDX content can be imported as components.
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+
+  // Long-term immutable caching headers for static assets
+  async headers() {
+    return [
+      {
+        source: '/:all*(svg|jpg|jpeg|png|gif|ico|webp|avif|woff|woff2|ttf|otf)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+    ]
+  },
 }
 
 const withMDX = createMDX({
-  // Plugins are referenced by package name (string form) so the options object
-  // stays JSON-serializable for Turbopack. remark-frontmatter parses and strips
-  // the YAML frontmatter block so it is not rendered as visible text. Article
-  // metadata is sourced from data/articles.ts; the MDX file holds only the body.
   options: {
     remarkPlugins: [['remark-frontmatter', { type: 'yaml', marker: '-' }]],
     rehypePlugins: [],

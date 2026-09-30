@@ -5,9 +5,14 @@ import { Container } from '@/components/v1/ui/Container'
 import { Button } from '@/components/v1/ui/Button'
 import { Marquee } from '@/components/v1/ui/Marquee'
 import { LogoCycle } from '@/components/v1/ui/LogoCycle'
-import { LeadForm } from '@/components/v1/forms/LeadForm'
+import dynamic from 'next/dynamic'
 import { useLanguage } from '@/lib/context/LanguageContext'
 import { useTranslation } from '@/lib/translations'
+
+const LeadForm = dynamic(
+  () => import('@/components/v1/forms/LeadForm').then((mod) => mod.LeadForm),
+  { ssr: false }
+)
 
 const MARQUEE_ITEMS = [
   'Marketing',
