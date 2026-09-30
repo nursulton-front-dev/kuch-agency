@@ -34,12 +34,11 @@ export default function AdminLoginPage() {
 
       if (error) {
         console.warn('Supabase auth error:', error.message)
-        // Fallback for local demo authentication if Supabase user is not yet created in remote DB
+        // Fallback for demo admin user if Supabase auth user is not registered in remote DB yet
         if (
-          (email.trim().toLowerCase() === 'admin@kuch.agency' && password === 'admin123') ||
-          (email.trim().length > 3 && password.length >= 4)
+          email.trim().toLowerCase() === 'admin@kuch.agency' && password === 'admin123'
         ) {
-          document.cookie = 'kuch_admin_session=true; path=/; max-age=86400;'
+          document.cookie = 'kuch_admin_session=true; path=/; max-age=86400; SameSite=Lax;'
           router.push('/admin/team')
           router.refresh()
           return
