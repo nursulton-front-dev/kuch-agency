@@ -77,12 +77,14 @@ export function About() {
               <span className="font-display text-sm font-bold uppercase tracking-[0.2em] text-kuch-black">
                 {lang === 'uz' ? 'KUCH AGENTLIGI' : 'Idea'}
               </span>
-              <h2 className="mt-4 font-display text-[clamp(2rem,2.5vw,2.75rem)] font-black uppercase leading-[0.94] tracking-tight text-kuch-black">
+              <h2 className="mt-4 font-display text-[clamp(1.75rem,2.2vw,2.5rem)] font-black uppercase leading-[0.94] tracking-tight text-kuch-black">
                 {lang === 'uz' ? (
                   <>
                     HAR QANDAY
                     <br />
-                    <span className="text-kuch-pink">MURAKKABLIKDAGI VAZIFA</span>
+                    <span className="text-kuch-pink">MURAKKABLIKDAGI</span>
+                    <br />
+                    <span className="text-kuch-pink">VAZIFA</span>
                   </>
                 ) : (
                   <>
