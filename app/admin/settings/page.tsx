@@ -150,7 +150,7 @@ export default function AdminSettingsPage() {
                         contacts: { ...prev.contacts, phone: e.target.value },
                       }))
                     }
-                    placeholder="+998 90 123 45 67"
+                    placeholder="+998 97 719 94 47"
                     className="w-full pl-10 pr-4 py-2.5 bg-[#18181B] border border-white/10 rounded-xl text-sm text-white font-mono focus:outline-none focus:border-[#FF007A]"
                   />
                 </div>
@@ -171,7 +171,7 @@ export default function AdminSettingsPage() {
                         contacts: { ...prev.contacts, email: e.target.value },
                       }))
                     }
-                    placeholder="hello@kuch.agency"
+                    placeholder="info@kuch-group.uz"
                     className="w-full pl-10 pr-4 py-2.5 bg-[#18181B] border border-white/10 rounded-xl text-sm text-white font-mono focus:outline-none focus:border-[#FF007A]"
                   />
                 </div>
@@ -198,7 +198,7 @@ export default function AdminSettingsPage() {
                         contacts: { ...prev.contacts, address_ru: e.target.value },
                       }))
                     }
-                    placeholder="г. Ташкент, Мирабадский р-н, ул. Нукус, 29"
+                    placeholder="Ташкент, Дамарык, 41"
                     className="w-full px-4 py-2.5 bg-[#18181B] border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#FF007A]"
                   />
                 </div>

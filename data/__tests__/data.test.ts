@@ -7,11 +7,11 @@ test('exactly 6 services with the required titles', () => {
   expect(services).toHaveLength(6)
   expect(services.map(s => s.title)).toEqual([
     'Маркетинговая стратегия',
-    'Брендинг и айдентика',
-    'Веб-разработка',
-    'SMM & Контент',
-    'Media Production & Видео',
-    'PR & Коммуникации',
+    'Бренд-стратегия',
+    'Коммуникационная стратегия',
+    'Рекламная кампания',
+    'Аутсорс-маркетинг',
+    'Разработка фирменного стиля',
   ])
 })
 test('service slugs unique and prices ordered', () => {
