@@ -58,6 +58,7 @@ export function AdminSidebar() {
       await supabase.auth.signOut()
       // Remove local admin cookie
       document.cookie = 'kuch_admin_session=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;'
+      document.cookie = 'kuch_admin_session=; path=/admin; expires=Thu, 01 Jan 1970 00:00:01 GMT;'
       toast('Вы вышли из системы', { type: 'info' })
       router.push('/admin/login')
       router.refresh()
