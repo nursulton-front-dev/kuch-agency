@@ -37,14 +37,6 @@ export function Footer() {
   return (
     <footer className="bg-kuch-black border-t border-white/10 pt-16 pb-8">
       <Container>
-        {/* Giant KUCH wordmark */}
-        <div
-          className="font-display font-black text-[clamp(4rem,18vw,14rem)] leading-none tracking-tighter text-kuch-pink select-none overflow-hidden mb-12"
-          aria-hidden="true"
-        >
-          KUCH
-        </div>
-
         {/* Footer grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand column */}

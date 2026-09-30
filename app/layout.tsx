@@ -2,10 +2,8 @@ import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
 import { pageMetadata, organizationJsonLd } from '@/lib/seo'
-import { Header } from '@/components/v1/layout/Header'
-import { Footer } from '@/components/v1/layout/Footer'
-import { StickyCta } from '@/components/v1/layout/StickyCta'
 import { LanguageProvider } from '@/lib/context/LanguageContext'
+import { LayoutWrapper } from '@/components/v1/layout/LayoutWrapper'
 
 // v1 display: Unbounded
 const fontUnbounded = localFont({
@@ -56,12 +54,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full bg-kuch-black text-white font-sans">
         <LanguageProvider>
-          <div className="v1-scope">
-            <Header />
-            <main className="pt-20">{children}</main>
-            <Footer />
-            <StickyCta />
-          </div>
+          <LayoutWrapper>{children}</LayoutWrapper>
         </LanguageProvider>
       </body>
     </html>
