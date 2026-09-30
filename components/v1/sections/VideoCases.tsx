@@ -26,9 +26,7 @@ export function VideoCases() {
                 Кейсы
               </span>
               <h2 className="mt-3 font-display text-5xl font-black uppercase leading-[0.88] tracking-tight text-kuch-white sm:text-6xl md:text-7xl lg:text-8xl">
-                Работа, которая
-                <br />
-                <span className="text-kuch-pink">в каждом бренде — KUCH</span>
+                В каждом бренде — <span className="text-kuch-pink">KUCH</span>
               </h2>
             </div>
           </div>

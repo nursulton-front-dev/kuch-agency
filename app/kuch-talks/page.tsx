@@ -47,14 +47,14 @@ export default function KuchTalksPage() {
         <Container>
           <Reveal>
             <div className="mb-12">
-              <span className="font-display text-sm font-bold uppercase tracking-[0.2em] text-kuch-pink">
-                KUCH TALKS SOON...
-              </span>
-              <h1 className="mt-3 font-display text-5xl font-black uppercase leading-[0.88] tracking-tight text-kuch-white sm:text-6xl md:text-7xl lg:text-8xl">
-                Разговоры
-                <br />
-                <span className="text-kuch-pink">по делу</span>
-              </h1>
+              <div className="flex flex-wrap items-center gap-3">
+                <h1 className="font-display text-5xl font-black uppercase leading-[0.88] tracking-tight text-kuch-white sm:text-6xl md:text-7xl lg:text-8xl">
+                  KUCH TALKS
+                </h1>
+                <span className="inline-flex items-center rounded-full bg-kuch-pink px-3.5 py-1 font-display text-xs font-black uppercase tracking-wider text-kuch-black sm:text-sm">
+                  SOON...
+                </span>
+              </div>
               <p className="mt-6 max-w-xl font-sans text-base text-kuch-white/70">
                 KUCH Talks — разговоры о том, как строится сильный бренд, от
                 людей, которые это делают.

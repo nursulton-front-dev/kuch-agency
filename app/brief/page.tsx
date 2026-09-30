@@ -43,7 +43,7 @@ export default function BriefPage() {
                 </p>
                 <ul className="mt-8 flex flex-col gap-3 font-sans text-sm text-kuch-white/60">
                   <li className="border-l-2 border-kuch-pink pl-4">
-                    Разбираем задачу. Приходим с готовым решением.
+                    Разберём задачу и вернёмся с решением.
                   </li>
                 </ul>
               </div>

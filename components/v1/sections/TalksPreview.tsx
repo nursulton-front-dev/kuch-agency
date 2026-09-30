@@ -14,14 +14,14 @@ export function TalksPreview() {
         <Reveal>
           <div className="grid items-end gap-6 md:grid-cols-12">
             <div className="md:col-span-8">
-              <span className="font-display text-sm font-bold uppercase tracking-[0.2em] text-kuch-pink">
-                KUCH TALKS SOON...
-              </span>
-              <h2 className="mt-3 font-display text-5xl font-black uppercase leading-[0.88] tracking-tight text-kuch-white sm:text-6xl md:text-7xl">
-                Разговоры
-                <br />
-                <span className="text-kuch-pink">по делу</span>
-              </h2>
+              <div className="flex flex-wrap items-center gap-3">
+                <h2 className="font-display text-5xl font-black uppercase leading-[0.88] tracking-tight text-kuch-white sm:text-6xl md:text-7xl">
+                  KUCH TALKS
+                </h2>
+                <span className="inline-flex items-center rounded-full bg-kuch-pink px-3.5 py-1 font-display text-xs font-black uppercase tracking-wider text-kuch-black sm:text-sm">
+                  SOON...
+                </span>
+              </div>
             </div>
             <p className="font-sans text-base text-kuch-white/70 md:col-span-4">
               KUCH Talks — разговоры о том, как строится сильный бренд, от

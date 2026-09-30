@@ -13,6 +13,14 @@ export function pageMetadata(input: {
   return {
     title: `${title} — KUCH`,
     description,
+    icons: {
+      icon: [
+        { url: '/favicon.ico', sizes: 'any' },
+        { url: '/icon.svg', type: 'image/svg+xml' },
+      ],
+      shortcut: '/favicon.ico',
+      apple: '/favicon.ico',
+    },
     alternates: {
       canonical,
     },

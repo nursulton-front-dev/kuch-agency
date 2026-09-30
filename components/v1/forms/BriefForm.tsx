@@ -292,7 +292,7 @@ export function BriefForm() {
             onChange={setContact}
             error={errors.contact}
             required
-            placeholder="email@example.com или +7 999 000 00 00"
+            placeholder="info@kuch-group.uz или +998 97 719 94 47"
           />
         </div>
       )}

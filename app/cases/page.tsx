@@ -32,9 +32,7 @@ export default function CasesPage() {
               Кейсы
             </span>
             <h1 className="mt-3 font-display text-5xl font-black uppercase leading-[0.88] tracking-tight text-kuch-white sm:text-6xl md:text-7xl lg:text-8xl">
-              В каждом
-              <br />
-              <span className="text-kuch-pink">бренде — KUCH</span>
+              В каждом бренде — <span className="text-kuch-pink">KUCH</span>
             </h1>
           </div>
         </Reveal>

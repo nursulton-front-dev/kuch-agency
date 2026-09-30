@@ -26,7 +26,7 @@ export function ContactCta() {
               </h2>
               <p className="mt-6 max-w-md font-sans text-lg text-kuch-black/80">
                 Заполните онлайн-бриф за пару минут или оставьте заявку — мы
-                свяжемся и предложим решение. Прямо, уверенно, по делу.
+                свяжемся и предложим решение.
               </p>
 
               <div className="mt-8">
