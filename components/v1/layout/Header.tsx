@@ -6,6 +6,7 @@ import { site } from '@/data/site'
 import { Button } from '@/components/v1/ui/Button'
 import { Container } from '@/components/v1/ui/Container'
 import { Logo } from '@/components/v1/ui/Logo'
+import { LanguageSwitcher } from '@/components/v1/ui/LanguageSwitcher'
 import dynamic from 'next/dynamic'
 import { useLanguage } from '@/lib/context/LanguageContext'
 import { useTranslation } from '@/lib/translations'
@@ -18,7 +19,7 @@ const MobileNav = dynamic(
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const { lang, setLang } = useLanguage()
+  const { lang } = useLanguage()
   const t = useTranslation(lang)
 
   useEffect(() => {
@@ -73,30 +74,7 @@ export function Header() {
             {/* Language switcher + Desktop socials + CTAs */}
             <div className="hidden lg:flex items-center gap-3">
               {/* Language Switcher Pill */}
-              <div className="flex items-center p-0.5 bg-white/5 border border-white/15 rounded-full text-xs font-mono font-bold mr-1">
-                <button
-                  type="button"
-                  onClick={() => setLang('ru')}
-                  className={`px-2.5 py-1 rounded-full transition-all duration-200 ${
-                    lang === 'ru'
-                      ? 'bg-kuch-pink text-white shadow-md shadow-kuch-pink/30'
-                      : 'text-white/60 hover:text-white'
-                  }`}
-                >
-                  RU
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setLang('uz')}
-                  className={`px-2.5 py-1 rounded-full transition-all duration-200 ${
-                    lang === 'uz'
-                      ? 'bg-kuch-pink text-white shadow-md shadow-kuch-pink/30'
-                      : 'text-white/60 hover:text-white'
-                  }`}
-                >
-                  UZ
-                </button>
-              </div>
+              <LanguageSwitcher className="mr-1" />
 
               {/* Instagram */}
               <Link
@@ -136,26 +114,7 @@ export function Header() {
 
             {/* Mobile hamburger & language switcher */}
             <div className="flex items-center gap-3 lg:hidden">
-              <div className="flex items-center p-0.5 bg-white/10 rounded-full text-xs font-mono font-bold">
-                <button
-                  type="button"
-                  onClick={() => setLang('ru')}
-                  className={`px-2 py-0.5 rounded-full transition-all ${
-                    lang === 'ru' ? 'bg-kuch-pink text-white' : 'text-white/60'
-                  }`}
-                >
-                  RU
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setLang('uz')}
-                  className={`px-2 py-0.5 rounded-full transition-all ${
-                    lang === 'uz' ? 'bg-kuch-pink text-white' : 'text-white/60'
-                  }`}
-                >
-                  UZ
-                </button>
-              </div>
+              <LanguageSwitcher size="sm" />
 
               <button
                 className="text-white p-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-kuch-pink"
