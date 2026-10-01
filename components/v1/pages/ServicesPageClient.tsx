@@ -58,7 +58,7 @@ export function ServicesPageClient() {
                 <Reveal delay={(i % 3) * 0.08} className="flex h-full flex-1 flex-col">
                   <Link
                     href={`/services/${service.slug}`}
-                    className="group flex h-full flex-1 flex-col justify-between border-2 border-kuch-white/15 bg-kuch-black p-6 sm:p-8 text-kuch-white transition-colors duration-200 hover:border-kuch-pink"
+                    className="group flex h-full flex-1 flex-col justify-between border-2 border-kuch-white/15 bg-kuch-black p-5 sm:p-6 xl:p-8 text-kuch-white transition-colors duration-200 hover:border-kuch-pink"
                   >
                     <div className="flex flex-col flex-1">
                       <div className="flex items-start justify-between">
@@ -71,7 +71,7 @@ export function ServicesPageClient() {
                           0{i + 1}
                         </span>
                       </div>
-                      <h2 className="mt-8 font-display text-2xl font-black uppercase leading-tight tracking-tight min-h-[3rem] flex items-center">
+                      <h2 className="mt-6 sm:mt-8 font-display text-xl sm:text-xl xl:text-2xl font-black uppercase leading-tight tracking-tight min-h-[3rem] flex items-center break-words [word-break:break-word]">
                         {displayTitle}
                       </h2>
                       <p className="mt-3 font-sans text-sm text-kuch-white/70 flex-1">
