@@ -17,9 +17,11 @@ export function pageMetadata(input: {
       icon: [
         { url: '/favicon.ico', sizes: 'any' },
         { url: '/icon.svg', type: 'image/svg+xml' },
+        { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
+        { url: '/icon-512.png', type: 'image/png', sizes: '512x512' },
       ],
       shortcut: '/favicon.ico',
-      apple: '/favicon.ico',
+      apple: '/apple-touch-icon.png',
     },
     alternates: {
       canonical,
