@@ -51,7 +51,7 @@ export function Pricing() {
               const isRequest = row.onRequest || row.priceFrom === 0
               const priceText = isRequest
                 ? t.services.priceOnRequest
-                : `$${row.priceFrom.toLocaleString()}+`
+                : `$${new Intl.NumberFormat('en-US').format(row.priceFrom)}+`
               const unitText = isRequest
                 ? ''
                 : row.unit === 'month'

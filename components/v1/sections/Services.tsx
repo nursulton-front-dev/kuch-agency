@@ -26,14 +26,14 @@ export function Services() {
         return t.services.priceOnRequest
       }
       if (found.starting_price) {
-        return `$${found.starting_price.toLocaleString()}+`
+        return `$${new Intl.NumberFormat('en-US').format(found.starting_price)}+`
       }
     }
 
     if (defaultIsOnRequest || !defaultStartingPrice) {
       return t.services.priceOnRequest
     }
-    return `$${defaultStartingPrice.toLocaleString()}+`
+    return `$${new Intl.NumberFormat('en-US').format(defaultStartingPrice)}+`
   }
 
   return (

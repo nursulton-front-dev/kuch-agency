@@ -51,7 +51,7 @@ export function ServicesPageClient() {
             const isRequest = service.onRequest || service.priceFrom === 0
             const priceText = isRequest
               ? t.services.priceOnRequest
-              : `$${service.priceFrom.toLocaleString()}+`
+              : `$${new Intl.NumberFormat('en-US').format(service.priceFrom)}+`
 
             return (
               <li key={service.slug} className="flex h-full flex-col">

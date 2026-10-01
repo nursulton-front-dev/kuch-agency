@@ -183,6 +183,18 @@ export const translations = {
       rights: 'Все права защищены.',
       privacy: 'Политика конфиденциальности',
     },
+    notFound: {
+      tag: 'ERROR 404 // СТРАНИЦА НЕ НАЙДЕНА',
+      title: 'МЫ БЕРЁМСЯ ЗА СЛОЖНОЕ, НО ЭТОЙ СТРАНИЦЫ ЗДЕСЬ НЕТ',
+      subtitle: 'Возможно, адрес изменился или страница была перенесена. Но вы всегда можете вернуться к главному или изучить наши кейсы и услуги.',
+      homeBtn: 'На главную',
+      briefBtn: 'Онлайн Бриф',
+      popularSections: 'Популярные разделы:',
+      cases: 'Кейсы',
+      services: 'Услуги',
+      talks: 'KUCH Talks',
+      contact: 'Контакты',
+    },
   },
   uz: {
     nav: {
@@ -365,6 +377,18 @@ export const translations = {
       contacts: 'KONTAKTLAR',
       rights: 'Barcha huquqlar himoyalangan.',
       privacy: 'Maxfiylik siyosati',
+    },
+    notFound: {
+      tag: 'ERROR 404 // SAHIFA TOPILMADI',
+      title: 'BIZ MURAKKAB VAZIFALARNI YECHAMIZ, LEKIN BU SAHIFA MAVJUD EMAS',
+      subtitle: 'Ehtimol, havola o\'zgargan yoki sahifa ko\'chirilgan. Lekin siz doimo asosiy sahifaga qaytishingiz yoki xizmatlarimiz bilan tanishishingiz mumkin.',
+      homeBtn: 'Bosh sahifaga',
+      briefBtn: 'Onlayn Brif',
+      popularSections: 'Ommabop bo\'limlar:',
+      cases: 'Keyslar',
+      services: 'Xizmatlar',
+      talks: 'KUCH Talks',
+      contact: 'Kontaktlar',
     },
   },
 }

@@ -66,10 +66,13 @@
 
 /* ─── Base styles ────────────────────────────────────────────────────────── */
 html {
+  height: 100%;
   -webkit-text-size-adjust: 100%;
 }
 
 body {
+  min-height: 100%;
+  margin: 0;
   background: var(--color-kuch-black);
   color: var(--color-kuch-white);
   font-family: var(--font-sans);
