@@ -34,9 +34,9 @@ export function StickyCta() {
       aria-label="Quick actions"
     >
       <Button
-        variant="ghost"
+        variant="dark"
         href="/brief"
-        className="bg-black shadow-lg shadow-black/40"
+        className="shadow-lg shadow-black/40"
       >
         {t.nav.brief}
       </Button>
