@@ -121,8 +121,8 @@ export const services: Service[] = [
     slug: 'ad-campaign',
     title: 'Рекламная кампания',
     title_uz: 'Reklama kampaniyasi',
-    short: 'Создание Big Idea, креативов и запуск мультиканальных рекламных кампаний.',
-    short_uz: 'Big Idea, kreativlarni yaratish va ko\'p kanalli reklama kampaniyalarini ishga tushirish.',
+    short: 'Разработка интегрированной рекламной кампании',
+    short_uz: 'Integratsiyalashgan reklama kampaniyasini ishlab chiqish',
     description:
       'Полный цикл создания и проведения рекламных кампаний — от генерации Big Idea и видеопродакшна до настройки медиаканалов и аналитики.',
     description_uz:
@@ -157,8 +157,8 @@ export const services: Service[] = [
     slug: 'outsource-marketing',
     title: 'Аутсорс-маркетинг',
     title_uz: 'Autsors-marketing',
-    short: 'Команда маркетинга под ключ для управления всеми процессами продвижения.',
-    short_uz: 'Barcha targ\'ibot jarayonlarini boshqarish uchun tayyor marketing jamoasi.',
+    short: 'Полное управление маркетингом вашей компании',
+    short_uz: 'Kompaniyangiz marketingini to\'liq boshqarish',
     description:
       'Полный аутсорсинг маркетинга компании: стратегический контроль, дизайн, таргет, SMM и аналитика в одном окне.',
     description_uz:
@@ -194,9 +194,9 @@ export const services: Service[] = [
   {
     slug: 'branding',
     title: 'Разработка фирменного стиля',
-    title_uz: 'Korporativ uslubni ishlab chiqish',
-    short: 'Создание айдентики, логотипа, брендбука и всех точек контакта бренда.',
-    short_uz: 'Ayniyat, logotip, brendbuk va brendning barcha aloqa nuqtalarini yaratish.',
+    title_uz: 'Firma uslubini ishlab chiqish',
+    short: 'Разработка вашего фирменного стиля, полноценной дизайн системы и брендбука',
+    short_uz: 'Firma uslubingiz, to\'liq dizayn-tizim va brendbukni ishlab chiqish',
     description:
       'Разработка уникального фирменного стиля, логотипа, гайдбука и адаптация визуального языка на все фирменные носители.',
     description_uz:

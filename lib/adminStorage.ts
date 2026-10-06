@@ -303,7 +303,7 @@ const initialSettings: AdminSettingsData = {
     {
       id: 'branding',
       title_ru: 'Разработка фирменного стиля',
-      title_uz: 'Korporativ uslubni ishlab chiqish',
+      title_uz: 'Firma uslubini ishlab chiqish',
       starting_price: 10000,
       is_on_request: false,
     },
