@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { Button } from '@/components/v1/ui/Button'
+import { Link } from '@/components/link'
 import { useLanguage } from '@/lib/context/LanguageContext'
 import { useTranslation } from '@/lib/translations'
 
@@ -29,24 +29,22 @@ export function StickyCta() {
 
   return (
     <div
-      className="fixed bottom-6 right-6 z-40 hidden gap-2 md:flex md:flex-row"
+      className="fixed bottom-6 right-6 z-40 flex items-center gap-2 bg-[#121214]/90 backdrop-blur-md border border-white/15 rounded-full p-1.5 shadow-2xl"
       role="complementary"
       aria-label="Quick actions"
     >
-      <Button
-        variant="ghost"
+      <Link
         href="/brief"
-        className="shadow-lg shadow-black/50"
+        className="px-4 py-2 rounded-full text-sm font-medium text-white bg-white/10 hover:bg-white/20 border border-white/20 transition-all"
       >
         {t.nav.brief}
-      </Button>
-      <Button
-        variant="primary"
+      </Link>
+      <Link
         href="/contact"
-        className="shadow-lg shadow-kuch-pink/30"
+        className="bg-[#FF007A] text-white hover:bg-[#e0006c] px-4 py-2 rounded-full text-sm font-medium transition-all shadow-md shadow-[#FF007A]/20"
       >
         {t.nav.apply}
-      </Button>
+      </Link>
     </div>
   )
 }
