@@ -45,8 +45,8 @@ export const services: Service[] = [
     slug: 'brand-strategy',
     title: 'Бренд-стратегия',
     title_uz: 'Brend-strategiyasi',
-    short: 'Формирование платформы бренда, позиционирования и тональности коммуникаций.',
-    short_uz: 'Brend platformasi, pozitsiyalash va muloqot ohangini shakllantirish.',
+    short: 'Строим позиционирование бренда на основе его сути и целей бизнеса.',
+    short_uz: 'Biznes maqsadlari va mohiyatiga tayangan holda brend pozitsiyasini quramiz.',
     description:
       'Разработка глубинной бренд-стратегии — от анализа ценностей и платформы бренда до архитектуры и позиционирования на рынке.',
     description_uz:
@@ -85,8 +85,8 @@ export const services: Service[] = [
     slug: 'communication-strategy',
     title: 'Коммуникационная стратегия',
     title_uz: 'Kommunikatsion strategiya',
-    short: 'Формирование публичного имиджа, PR-канала и антикризисного регулирования.',
-    short_uz: 'Ommaviy imidj, PR-kanallar va inqirozga qarshi boshqaruvni shakllantirish.',
+    short: 'Формирование характера и отличия каждого суббренда, определение стратегии коммуникаций.',
+    short_uz: 'Har bir subbrend xarakteri va farqini shakllantirish, kommunikatsiya strategiyasini belgilash.',
     description:
       'Разработка комплексной коммуникационной стратегии для работы со СМИ, инфлюенсерами, клиентами и партнерами.',
     description_uz:
