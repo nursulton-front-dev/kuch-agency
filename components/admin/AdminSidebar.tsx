@@ -15,6 +15,7 @@ import {
   ShieldCheck,
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
+import { Logo } from '@/components/v1/ui/Logo'
 import { useToast } from './ToastContext'
 
 interface NavItem {
@@ -77,9 +78,9 @@ export function AdminSidebar() {
         {/* Brand Header */}
         <div className="p-6 border-b border-white/10 flex items-center justify-between">
           <Link href="/admin/team" className="flex items-center gap-3 group">
-            <div className="font-extrabold text-xl tracking-tighter text-white flex items-center gap-1.5">
-              <span>KUCH</span>
-              <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#FF007A] text-white tracking-wide uppercase shadow-md shadow-[#FF007A]/30">
+            <div className="flex items-center gap-2">
+              <Logo className="h-5 w-auto text-white" />
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#FF007A] text-white tracking-wide uppercase shadow-md shadow-[#FF007A]/30">
                 ADMIN
               </span>
             </div>

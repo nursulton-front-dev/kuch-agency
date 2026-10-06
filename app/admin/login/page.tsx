@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Lock, Mail, Loader2, ArrowRight, ShieldCheck, AlertCircle } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
+import { Logo } from '@/components/v1/ui/Logo'
 
 export default function AdminLoginPage() {
   const router = useRouter()
@@ -75,10 +76,9 @@ export default function AdminLoginPage() {
             <span>KUCH ADMIN PANEL</span>
           </div>
 
-          <h1 className="text-3xl font-extrabold tracking-tight text-white flex items-center justify-center gap-2">
-            <span>KUCH</span>
-            <span className="text-[#FF007A]">.</span>
-          </h1>
+          <div className="pt-2 pb-1 flex items-center justify-center">
+            <Logo className="h-8 sm:h-9 w-auto text-white" />
+          </div>
           <p className="text-xs text-white/50">
             Панель управления проектами и контентом агентства
           </p>
