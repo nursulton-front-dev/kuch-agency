@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 
-const WORDS = ['KUCH', 'MARKETING', 'BRANDING', 'STRATEGY']
+const WORDS = ['MARKETING', 'BRANDING', 'STRATEGY']
 const INTERVAL = 2000
 
 export function LogoCycle({ className }: { className?: string }) {
@@ -20,7 +20,7 @@ export function LogoCycle({ className }: { className?: string }) {
 
   if (reduced) {
     return (
-      <span className={className} aria-label="KUCH">
+      <span className={className} aria-label="MARKETING">
         {WORDS[0]}
       </span>
     )
@@ -28,10 +28,10 @@ export function LogoCycle({ className }: { className?: string }) {
 
   return (
     <span className={className} style={{ display: 'inline-block', position: 'relative' }}>
-      <span className="sr-only">KUCH — маркетинг, брендинг, стратегия</span>
+      <span className="sr-only">Маркетинг, брендинг, стратегия</span>
       <span
         aria-hidden="true"
-        style={{ display: 'inline-block', position: 'relative', minWidth: '8ch' }}
+        style={{ display: 'inline-block', position: 'relative', minWidth: '9ch' }}
       >
         <AnimatePresence mode="wait">
           <motion.span
