@@ -10,8 +10,10 @@ export function pageMetadata(input: {
   const { title, description, path, ogImage = '/og/default.png' } = input
   const canonical = site.url + path
 
+  const formattedTitle = title.startsWith('KUCH') ? title : `KUCH — ${title}`
+
   return {
-    title: `${title} — KUCH`,
+    title: formattedTitle,
     description,
     icons: {
       icon: [
@@ -27,7 +29,7 @@ export function pageMetadata(input: {
       canonical,
     },
     openGraph: {
-      title: `${title} — KUCH`,
+      title: formattedTitle,
       description,
       url: canonical,
       siteName: site.name,
@@ -36,7 +38,7 @@ export function pageMetadata(input: {
           url: ogImage.startsWith('http') ? ogImage : site.url + ogImage,
           width: 1200,
           height: 630,
-          alt: title,
+          alt: formattedTitle,
         },
       ],
       locale: 'ru_RU',
@@ -44,7 +46,7 @@ export function pageMetadata(input: {
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${title} — KUCH`,
+      title: formattedTitle,
       description,
       images: [ogImage.startsWith('http') ? ogImage : site.url + ogImage],
     },

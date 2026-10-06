@@ -19,7 +19,7 @@ const variantClasses: Record<string, string> = {
     'bg-kuch-pink text-kuch-black border border-kuch-pink hover:bg-kuch-black hover:text-kuch-pink focus-visible:outline-kuch-pink',
   ghost:
     'bg-transparent text-kuch-white border border-kuch-white hover:bg-kuch-white hover:text-kuch-black focus-visible:outline-kuch-white',
-  dark: 'bg-kuch-black text-kuch-white border border-kuch-white hover:bg-kuch-white hover:text-kuch-black focus-visible:outline-kuch-white',
+  dark: 'bg-kuch-black text-kuch-white border border-kuch-black hover:bg-kuch-white hover:text-kuch-black focus-visible:outline-kuch-black',
 }
 
 const base =
