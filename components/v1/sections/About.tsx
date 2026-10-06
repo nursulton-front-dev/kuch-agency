@@ -12,34 +12,34 @@ export function About() {
   const pillars = lang === 'uz' ? [
     {
       num: '01',
-      title: 'Xalqaro tajriba. Lokal ekspertiza.',
-      body: 'Jamoa xalqaro brendlar bilan ishlash tajribasini va lokal o\'ziga xoslikni chuqur tushunishni birlashtirib, har bir yechimni O\'zbekistonga moslashtiradi.',
+      title: 'KUCH',
+      body: 'Xalqaro tajriba. Mahalliy ekspertiza. Jamoamiz xalqaro brendlar tajribasi va mahalliy bozor xususiyatlarini chuqur anglagan holda, har bir yechimni O\'zbekiston sharoitiga moslashtiradi.',
     },
     {
       num: '02',
-      title: 'Strategik yondashuv.',
-      body: 'Agentlikning asosiy tamoyillaridan biri — barcha vazifalarga strategik yondashuv. Loyihalarga vazifa turidan qat\'i nazar strateglar va marketologlar jalb etiladi.',
+      title: 'MURAKKAB ISH',
+      body: 'Strategik yondashuv. Agentlikning asosiy tamoyillaridan biri — barcha vazifalarga strategik yondashuv. Loyiha turidan qat\'i nazar, jarayonga yetuk strateglar va marketologlar jalb qilinadi.',
     },
     {
       num: '03',
-      title: 'Har qanday murakkablikdagi vazifalarni hal etish.',
-      body: 'Shtatda va frilanserlar bazasida har xil profildagi mutaxassislar mavjud: prodakt-marketologlardan tortib moliyaviy strateglargacha. Biz B2C dan B2G gacha bo\'lgan vazifalarni hal qilamiz.',
+      title: 'NATIJA',
+      body: 'Har qanday murakkablikdagi vazifalar yechimi. Agentlik shtati va mutaxassislar bazasida turli soha ekspertlari mavjud: produkt-marketologlar va kreatorlardan tortib, prodyuserlar va moliyaviy strateglargacha. Biz B2C dan B2G gacha bo\'lgan biznes sohalarida har qanday murakkablikdagi vazifalarni hal qilamiz.',
     },
   ] : [
     {
       num: '01',
-      title: 'Международный опыт. Локальная экспертиза.',
-      body: 'Команда сочетает опыт работы с международными брендами и глубокое понимание локальной специфики, адаптируя каждое решение под Узбекистан.',
+      title: 'СИЛА',
+      body: 'Международный опыт. Локальная экспертиза. Команда сочетает опыт работы с международными брендами и глубокое понимание локальной специфики, адаптируя каждое решение под Узбекистан.',
     },
     {
       num: '02',
-      title: 'Стратегический подход.',
-      body: 'Один из ключевых принципов агентства — стратегический подход ко всем задачам. В проекты привлекаются стратеги и маркетологи вне зависимости от типа задачи.',
+      title: 'ТЯЖЁЛАЯ РАБОТА',
+      body: 'Стратегический подход. Один из ключевых принципов агентства — стратегический подход ко всем задачам. В проекты привлекаются стратеги и маркетологи вне зависимости от типа задачи.',
     },
     {
       num: '03',
-      title: 'Решение задач любой сложности.',
-      body: 'В штате и базе фрилансеров агентства — специалисты разного профиля: от продакт-маркетологов и креаторов до продюсеров и финансовых стратегов. Мы решаем задачи любой сложности и формата в разных отраслях бизнеса — от B2C до B2G.',
+      title: 'РЕЗУЛЬТАТ',
+      body: 'Решение задач любой сложности. В штате и базе фрилансеров агентства — специалисты разного профиля: от продакт-маркетологов и креаторов до продюсеров и финансовых стратегов. Мы решаем задачи любой сложности и формата в разных отраслях бизнеса — от B2C до B2G.',
     },
   ]
 
