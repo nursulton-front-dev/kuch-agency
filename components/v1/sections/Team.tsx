@@ -20,10 +20,7 @@ export function Team() {
         <Reveal>
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <span className="font-display text-sm font-bold uppercase tracking-[0.2em] text-kuch-pink">
-                {t.team.badge}
-              </span>
-              <h2 className="mt-3 font-display text-5xl font-black uppercase leading-[0.9] tracking-tight text-kuch-white sm:text-6xl md:text-7xl">
+              <h2 className="font-display text-5xl font-black uppercase leading-[0.9] tracking-tight text-kuch-white sm:text-6xl md:text-7xl">
                 {lang === 'ru' ? (
                   <>
                     Наша
