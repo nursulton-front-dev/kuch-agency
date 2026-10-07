@@ -5,7 +5,6 @@ import { Container } from '@/components/v1/ui/Container'
 import { Button } from '@/components/v1/ui/Button'
 import { Marquee } from '@/components/v1/ui/Marquee'
 import { LogoCycle } from '@/components/v1/ui/LogoCycle'
-import { Logo } from '@/components/v1/ui/Logo'
 import dynamic from 'next/dynamic'
 import { useLanguage } from '@/lib/context/LanguageContext'
 import { useTranslation } from '@/lib/translations'
@@ -62,8 +61,8 @@ export function Hero() {
 
       <Container className="relative z-10 flex flex-1 flex-col justify-center gap-10">
         {/* Eyebrow: cycling discipline word */}
-        <div className="flex items-center gap-3">
-          <Logo className="h-6 sm:h-7 w-auto text-kuch-pink shrink-0" />
+        <div className="flex items-center gap-4">
+          <span className="h-3 w-3 shrink-0 bg-kuch-pink" aria-hidden="true" />
           <span className="font-display text-base font-bold uppercase tracking-[0.2em] text-kuch-white sm:text-lg">
             <LogoCycle className="text-kuch-pink" />
           </span>

@@ -13,16 +13,17 @@ export function pageMetadata(input: {
   const formattedTitle = title.startsWith('KUCH') ? title : `KUCH — ${title}`
 
   return {
+    metadataBase: new URL(site.url),
     title: formattedTitle,
     description,
     icons: {
       icon: [
-        { url: '/icon.svg', type: 'image/svg+xml' },
         { url: '/favicon.ico', sizes: 'any' },
+        { url: '/icon.svg', type: 'image/svg+xml' },
         { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
         { url: '/icon-512.png', type: 'image/png', sizes: '512x512' },
       ],
-      shortcut: '/icon.svg',
+      shortcut: '/favicon.ico',
       apple: '/apple-touch-icon.png',
     },
     alternates: {
