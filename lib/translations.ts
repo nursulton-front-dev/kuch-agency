@@ -72,7 +72,7 @@ export const translations = {
       badge: 'КОМАНДА',
       tag: 'Команда',
       title: 'НАША КОМАНДА',
-      subtitle: 'Эксперты, а не исполнители. Каждый отвечает за результат, а не за процесс.',
+      subtitle: 'Наша команда:',
     },
     blog: {
       badge: 'БЛОГ',
@@ -109,7 +109,7 @@ export const translations = {
       email: 'EMAIL',
       phone: 'ТЕЛЕФОН',
       address: 'АДРЕС',
-      addressText: 'Ташкент, Дамарык, 41',
+      addressText: 'Ташкент, Буюк Ипак Йули, 1В',
       socials: 'СОЦСЕТИ',
     },
     brief: {
@@ -267,7 +267,7 @@ export const translations = {
       badge: 'JAMOA',
       tag: 'Jamoa',
       title: 'BIZNING JAMOA',
-      subtitle: 'Ijrochilar emas, ekspertlar. Har birimiz jarayon uchun emas, natija uchun javob beramiz.',
+      subtitle: 'Bizning jamoa:',
     },
     blog: {
       badge: 'BLOG',
@@ -304,7 +304,7 @@ export const translations = {
       email: 'EMAIL',
       phone: 'TELEFON',
       address: 'MANZIL',
-      addressText: 'Toshkent, Damariq, 41',
+      addressText: "Toshkent, Buyuk Ipak Yo'li, 1V",
       socials: 'IJTIMOIY TARMOQLAR',
     },
     brief: {

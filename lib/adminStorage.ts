@@ -259,8 +259,8 @@ const initialSettings: AdminSettingsData = {
   contacts: {
     phone: '+998 97 719 94 47',
     email: 'info@kuch-group.uz',
-    address_ru: 'Ташкент, Дамарык, 41',
-    address_uz: 'Toshkent, Damariq, 41',
+    address_ru: 'Ташкент, Буюк Ипак Йули, 1В',
+    address_uz: "Toshkent, Buyuk Ipak Yo'li, 1V",
     telegram: 'https://t.me/kuchaloqada',
     instagram: 'https://www.instagram.com/kuch_group/',
   },

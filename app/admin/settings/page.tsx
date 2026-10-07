@@ -198,7 +198,7 @@ export default function AdminSettingsPage() {
                         contacts: { ...prev.contacts, address_ru: e.target.value },
                       }))
                     }
-                    placeholder="Ташкент, Дамарык, 41"
+                    placeholder="Ташкент, Буюк Ипак Йули, 1В"
                     className="w-full px-4 py-2.5 bg-[#18181B] border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#FF007A]"
                   />
                 </div>

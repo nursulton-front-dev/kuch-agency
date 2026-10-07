@@ -20,6 +20,6 @@ export const site: SiteConfig = {
   contacts: {
     email: 'info@kuch-group.uz',
     phone: '+998 97 719 94 47',
-    address: 'Ташкент, Дамарык, 41',
+    address: 'Ташкент, Буюк Ипак Йули, 1В',
   },
 }
