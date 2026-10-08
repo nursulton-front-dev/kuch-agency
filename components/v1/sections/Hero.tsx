@@ -5,6 +5,7 @@ import { Container } from '@/components/v1/ui/Container'
 import { Button } from '@/components/v1/ui/Button'
 import { Marquee } from '@/components/v1/ui/Marquee'
 import { LogoCycle } from '@/components/v1/ui/LogoCycle'
+import { Logo } from '@/components/v1/ui/Logo'
 import dynamic from 'next/dynamic'
 import { useLanguage } from '@/lib/context/LanguageContext'
 import { useTranslation } from '@/lib/translations'
@@ -50,45 +51,44 @@ export function Hero() {
 
   return (
     <section className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden bg-kuch-black pt-8 pb-10 md:pt-12">
-      {/* Oversized KUCH backdrop letterform — graphic watermark */}
-      <span
+      {/* Oversized KUCH backdrop letterform — official SVG logo watermark */}
+      <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[50%] select-none font-display font-black leading-none tracking-tighter text-kuch-pink/15 whitespace-nowrap block"
-        style={{ fontSize: 'clamp(13rem, 31vw, 40rem)' }}
+        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[48%] select-none text-kuch-pink/15 w-[115vw] max-w-[1400px] min-w-[320px] px-4 flex items-center justify-center overflow-hidden"
       >
-        KUCH
-      </span>
+        <Logo className="w-full h-auto opacity-75" />
+      </div>
 
-      <Container className="relative z-10 flex flex-1 flex-col justify-center gap-10">
+      <Container className="relative z-10 flex flex-1 flex-col justify-center gap-8 md:gap-10">
         {/* Eyebrow: cycling discipline word */}
         <div className="flex items-center gap-4">
           <span className="h-3 w-3 shrink-0 bg-kuch-pink" aria-hidden="true" />
-          <span className="font-display text-base font-bold uppercase tracking-[0.2em] text-kuch-white sm:text-lg">
+          <span className="font-display text-sm font-bold uppercase tracking-[0.2em] text-kuch-white sm:text-base md:text-lg">
             <LogoCycle className="text-kuch-pink" />
           </span>
         </div>
 
-        {/* Slogan as knockout poster bars — the centerpiece */}
-        <h1 className="font-display font-black uppercase leading-[0.82] tracking-tight text-kuch-white">
+        {/* Slogan as knockout poster bars — 100% responsive on all mobile screens */}
+        <h1 className="font-display font-black uppercase leading-[0.85] md:leading-[0.82] tracking-tight text-kuch-white max-w-full overflow-hidden">
           <span className="sr-only">{t.hero.heading}</span>
-          <span aria-hidden="true">
+          <span aria-hidden="true" className="block max-w-full">
             {lang === 'uz' ? (
               <>
-                <span className="block text-[clamp(2.5rem,10vw,8rem)]">BIZ</span>
-                <span className="mt-1 inline-block bg-kuch-pink px-3 py-1 text-[clamp(2rem,7vw,6rem)] text-kuch-black md:px-6">
+                <span className="block text-[clamp(2.1rem,9.5vw,8rem)]">BIZ</span>
+                <span className="mt-1 inline-block bg-kuch-pink px-2.5 py-1 text-[clamp(1.35rem,6.5vw,6rem)] text-kuch-black md:px-6 max-w-full">
                   QIYINCHILIKLARDAN
                 </span>
-                <span className="mt-1 block text-[clamp(2.5rem,10vw,8rem)]">
+                <span className="mt-1 block text-[clamp(2.1rem,9.5vw,8rem)]">
                   {"QO'RQMAYMIZ"}
                 </span>
               </>
             ) : (
               <>
-                <span className="block text-[clamp(2.75rem,11vw,9rem)]">МЫ НЕ</span>
-                <span className="mt-1 inline-block bg-kuch-pink px-3 py-1 text-[clamp(2.75rem,11vw,9rem)] text-kuch-black md:px-6">
+                <span className="block text-[clamp(2.1rem,9.5vw,9rem)]">МЫ НЕ</span>
+                <span className="mt-1 inline-block bg-kuch-pink px-2.5 py-1 text-[clamp(2.1rem,9.5vw,9rem)] text-kuch-black md:px-6 max-w-full">
                   БОИМСЯ
                 </span>
-                <span className="mt-1 block text-[clamp(2.75rem,11vw,9rem)]">
+                <span className="mt-1 block text-[clamp(2.1rem,9.5vw,9rem)]">
                   СЛОЖНОГО
                 </span>
               </>
@@ -96,7 +96,7 @@ export function Hero() {
           </span>
         </h1>
 
-        <p className="max-w-2xl font-sans text-lg text-kuch-white/80 sm:text-xl md:text-2xl">
+        <p className="max-w-2xl font-sans text-base text-kuch-white/80 sm:text-xl md:text-2xl leading-relaxed">
           {t.hero.subheading}
         </p>
 
