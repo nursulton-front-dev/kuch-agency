@@ -2,11 +2,14 @@ import createMDX from '@next/mdx'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+
   // Gzip / Brotli compression
   compress: true,
 
   // Image optimization
   images: {
+    unoptimized: true,
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 2592000, // 30 days
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],

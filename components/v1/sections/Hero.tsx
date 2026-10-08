@@ -5,6 +5,7 @@ import { Container } from '@/components/v1/ui/Container'
 import { Button } from '@/components/v1/ui/Button'
 import { Marquee } from '@/components/v1/ui/Marquee'
 import { LogoCycle } from '@/components/v1/ui/LogoCycle'
+import { Logo } from '@/components/v1/ui/Logo'
 import dynamic from 'next/dynamic'
 import { useLanguage } from '@/lib/context/LanguageContext'
 import { useTranslation } from '@/lib/translations'
@@ -50,14 +51,13 @@ export function Hero() {
 
   return (
     <section className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden bg-kuch-black pt-8 pb-10 md:pt-12">
-      {/* Oversized KUCH backdrop letterform — graphic block */}
-      <span
+      {/* Oversized KUCH backdrop letterform — official SVG logo */}
+      <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-4 top-1/2 hidden -translate-y-1/2 select-none font-display font-black leading-[0.74] tracking-tighter text-kuch-pink/15 md:block"
-        style={{ fontSize: 'clamp(14rem, 32vw, 40rem)' }}
+        className="pointer-events-none absolute -right-12 top-1/2 hidden -translate-y-1/2 select-none text-kuch-pink/15 md:block w-[55vw] max-w-[900px] min-w-[450px]"
       >
-        KUCH
-      </span>
+        <Logo className="h-auto w-full" />
+      </div>
 
       <Container className="relative z-10 flex flex-1 flex-col justify-center gap-10">
         {/* Eyebrow: cycling discipline word */}
