@@ -4,7 +4,6 @@ import React, { useState, useEffect, useCallback } from 'react'
 import { Container } from '@/components/v1/ui/Container'
 import { Button } from '@/components/v1/ui/Button'
 import { Marquee } from '@/components/v1/ui/Marquee'
-import { LogoCycle } from '@/components/v1/ui/LogoCycle'
 import { Logo } from '@/components/v1/ui/Logo'
 import dynamic from 'next/dynamic'
 import { useLanguage } from '@/lib/context/LanguageContext'
@@ -54,17 +53,17 @@ export function Hero() {
       {/* Oversized KUCH backdrop letterform — official SVG logo watermark */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 select-none text-kuch-pink/10 w-full max-w-[1400px] px-4 flex items-center justify-center overflow-hidden"
+        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[48%] select-none text-kuch-pink/15 w-[128vw] min-w-[1100px] flex items-center justify-center overflow-visible"
       >
-        <Logo className="w-full h-auto opacity-70" />
+        <Logo className="w-full h-auto opacity-80" />
       </div>
 
       <Container className="relative z-10 flex flex-1 flex-col justify-center gap-10">
-        {/* Eyebrow: cycling discipline word */}
+        {/* Eyebrow badge */}
         <div className="flex items-center gap-4">
           <span className="h-3 w-3 shrink-0 bg-kuch-pink" aria-hidden="true" />
           <span className="font-display text-base font-bold uppercase tracking-[0.2em] text-kuch-white sm:text-lg">
-            <LogoCycle className="text-kuch-pink" />
+            KUCH
           </span>
         </div>
 
