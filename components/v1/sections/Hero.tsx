@@ -54,7 +54,7 @@ export function Hero() {
       {/* Oversized KUCH backdrop letterform — official SVG logo watermark */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[48%] select-none text-kuch-pink/15 w-[140vw] sm:w-[135vw] md:w-[130vw] min-w-[650px] md:min-w-[1400px] flex items-center justify-center overflow-hidden"
+        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[48%] select-none text-kuch-pink/15 w-[140vw] max-w-[1800px] min-w-[360px] px-2 flex items-center justify-center overflow-hidden"
       >
         <Logo className="w-full h-auto opacity-80" />
       </div>
