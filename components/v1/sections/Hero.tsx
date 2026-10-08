@@ -51,10 +51,10 @@ export function Hero() {
 
   return (
     <section className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden bg-kuch-black pt-8 pb-10 md:pt-12">
-      {/* Oversized KUCH backdrop letterform — official SVG logo watermark */}
+      {/* Oversized KUCH backdrop letterform — edge-to-edge SVG logo watermark */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[48%] select-none text-kuch-pink/15 w-[140vw] max-w-[1800px] min-w-[360px] px-2 flex items-center justify-center overflow-hidden"
+        className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-[48%] select-none text-kuch-pink/15 w-full flex items-center justify-center overflow-hidden px-0"
       >
         <Logo className="w-full h-auto opacity-80" />
       </div>
