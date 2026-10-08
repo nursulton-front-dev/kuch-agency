@@ -29,7 +29,7 @@ export function VideoCases() {
               <span className="font-display text-sm font-bold uppercase tracking-[0.2em] text-kuch-pink">
                 {t.cases.tag}
               </span>
-              <h2 className="mt-3 font-display text-5xl font-black uppercase leading-[0.88] tracking-tight text-kuch-white sm:text-6xl md:text-7xl lg:text-8xl">
+              <h2 className="mt-3 font-display text-[clamp(2rem,10cqi,3rem)] font-black uppercase leading-[0.88] tracking-tight text-kuch-white sm:text-6xl md:text-7xl lg:text-8xl">
                 {lang === 'ru' ? 'В каждом бренде — ' : 'Har bir brendda — '}
                 <span className="text-kuch-pink">KUCH</span>
               </h2>

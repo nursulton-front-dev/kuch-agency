@@ -50,16 +50,16 @@ export function Hero() {
   }, [formOpen, close])
 
   return (
-    <section className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden bg-kuch-black pt-8 pb-10 md:pt-12">
+    <section className="relative flex flex-col bg-kuch-black pt-8 pb-10 md:pt-12 lg:min-h-[100svh] lg:justify-between">
       {/* Oversized KUCH backdrop letterform — edge-to-edge SVG logo watermark */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-[48%] select-none text-kuch-pink/15 w-full flex items-center justify-center overflow-hidden px-0"
+        className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-[48%] select-none text-kuch-pink/10 lg:text-kuch-pink/15 flex items-center justify-center overflow-hidden"
       >
         <Logo className="w-full h-auto opacity-80" />
       </div>
 
-      <Container className="relative z-10 flex flex-1 flex-col justify-center gap-8 md:gap-10">
+      <Container className="relative z-10 flex flex-col gap-6 md:gap-8 lg:flex-1 lg:justify-center lg:gap-10">
         {/* Eyebrow: cycling discipline word */}
         <div className="flex items-center gap-4">
           <span className="h-3 w-3 shrink-0 bg-kuch-pink" aria-hidden="true" />
@@ -68,27 +68,27 @@ export function Hero() {
           </span>
         </div>
 
-        {/* Slogan as knockout poster bars — 100% responsive on all mobile screens */}
-        <h1 className="font-display font-black uppercase leading-[0.85] md:leading-[0.82] tracking-tight text-kuch-white max-w-full overflow-hidden">
+        {/* Size against the padded container; keep whole words and the highlight visible. */}
+        <h1 className="max-w-full font-display text-[clamp(2rem,11.5cqi,9rem)] font-black uppercase leading-[1.02] tracking-tight text-kuch-white lg:text-[clamp(2.1rem,9.5vw,9rem)] lg:leading-[0.82]">
           <span className="sr-only">{t.hero.heading}</span>
           <span aria-hidden="true" className="block max-w-full">
             {lang === 'uz' ? (
               <>
-                <span className="block text-[clamp(2.1rem,9.5vw,8rem)]">BIZ</span>
-                <span className="mt-1 inline-block bg-kuch-pink px-2.5 py-1 text-[clamp(1.35rem,6.5vw,6rem)] text-kuch-black md:px-6 max-w-full">
+                <span className="block lg:text-[clamp(2.1rem,9.5vw,8rem)]">BIZ</span>
+                <span className="mt-1 inline-block bg-kuch-pink px-2.5 py-1 text-[clamp(1rem,5.8cqi,6rem)] text-kuch-black lg:px-6 lg:text-[clamp(1.35rem,6.5vw,6rem)]">
                   QIYINCHILIKLARDAN
                 </span>
-                <span className="mt-1 block text-[clamp(2.1rem,9.5vw,8rem)]">
+                <span className="mt-1 block text-[clamp(1.5rem,9cqi,8rem)] lg:text-[clamp(2.1rem,9.5vw,8rem)]">
                   {"QO'RQMAYMIZ"}
                 </span>
               </>
             ) : (
               <>
-                <span className="block text-[clamp(2.1rem,9.5vw,9rem)]">МЫ НЕ</span>
-                <span className="mt-1 inline-block bg-kuch-pink px-2.5 py-1 text-[clamp(2.1rem,9.5vw,9rem)] text-kuch-black md:px-6 max-w-full">
+                <span className="block">МЫ НЕ</span>
+                <span className="mt-1 inline-block bg-kuch-pink px-2.5 py-1 text-kuch-black lg:px-6">
                   БОИМСЯ
                 </span>
-                <span className="mt-1 block text-[clamp(2.1rem,9.5vw,9rem)]">
+                <span className="mt-1 block">
                   СЛОЖНОГО
                 </span>
               </>
@@ -100,7 +100,7 @@ export function Hero() {
           {t.hero.subheading}
         </p>
 
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
           <Button variant="primary" href="/brief">
             {t.hero.briefBtn}
           </Button>
@@ -121,18 +121,18 @@ export function Hero() {
       {/* Lead form modal */}
       {formOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-kuch-black/80 p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-[60] flex flex-col items-center overflow-y-auto bg-kuch-black/80 p-4 backdrop-blur-sm"
           role="dialog"
           aria-modal="true"
           aria-label={t.hero.applyBtn}
           onClick={close}
         >
           <div
-            className="relative w-full max-w-lg border-2 border-kuch-pink bg-kuch-black p-6 sm:p-8"
+            className="relative my-auto w-full max-w-lg shrink-0 border-2 border-kuch-pink bg-kuch-black p-5 sm:p-8"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="mb-6 flex items-start justify-between gap-4">
-              <h2 className="font-display text-2xl font-black uppercase tracking-tight text-kuch-white">
+              <h2 className="min-w-0 font-display text-xl sm:text-2xl font-black uppercase tracking-tight text-kuch-white">
                 {t.contact.formTitle}
               </h2>
               <button

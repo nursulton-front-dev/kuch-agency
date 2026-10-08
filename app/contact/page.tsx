@@ -29,14 +29,14 @@ export default function ContactPage() {
 
       <Section bg="blue" id="contact">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
             {/* Left: contacts */}
-            <Reveal>
+            <Reveal className="@container">
               <div className="flex h-full flex-col">
                 <span className="font-display text-sm font-bold uppercase tracking-[0.2em] text-kuch-black/70">
                   Контакты
                 </span>
-                <h1 className="mt-3 font-display text-5xl font-black uppercase leading-[0.86] tracking-tight text-kuch-black sm:text-6xl md:text-7xl">
+                <h1 className="mt-3 font-display text-[clamp(1.75rem,11cqi,4.5rem)] font-black uppercase leading-[0.86] tracking-tight text-kuch-black">
                   Поговорим
                   <br />
                   <span className="text-kuch-white">по делу</span>
@@ -51,7 +51,7 @@ export default function ContactPage() {
                   </Button>
                 </div>
 
-                <dl className="mt-12 grid grid-cols-1 gap-6 border-t-2 border-kuch-black pt-8 sm:grid-cols-2">
+                <dl className="mt-12 grid grid-cols-1 gap-6 border-t-2 border-kuch-black pt-8 @min-[32rem]:grid-cols-2">
                   <div>
                     <dt className="font-sans text-xs uppercase tracking-widest text-kuch-black/60">
                       Email
@@ -59,6 +59,7 @@ export default function ContactPage() {
                     <dd className="mt-1">
                       <a
                         href={`mailto:${site.contacts.email}`}
+                        style={{ overflowWrap: 'anywhere' }}
                         className="font-display text-lg font-black tracking-tight text-kuch-black transition-colors hover:text-kuch-white"
                       >
                         {site.contacts.email}
@@ -90,7 +91,7 @@ export default function ContactPage() {
                     <dt className="font-sans text-xs uppercase tracking-widest text-kuch-black/60">
                       Соцсети
                     </dt>
-                    <dd className="mt-1 flex gap-4">
+                    <dd className="mt-1 flex flex-wrap gap-x-4 gap-y-2">
                       <a
                         href={site.socials.instagram}
                         target="_blank"
@@ -115,8 +116,8 @@ export default function ContactPage() {
 
             {/* Right: lead form */}
             <Reveal delay={0.1}>
-              <div className="border-2 border-kuch-black bg-kuch-black p-6 md:p-8">
-                <h2 className="font-display text-2xl font-black uppercase tracking-tight text-kuch-white">
+              <div className="border-2 border-kuch-black bg-kuch-black p-5 md:p-8">
+                <h2 className="font-display text-xl sm:text-2xl font-black uppercase tracking-tight text-kuch-white">
                   Оставить заявку
                 </h2>
                 <p className="mt-2 font-sans text-sm text-kuch-white/60">

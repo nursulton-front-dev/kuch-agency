@@ -52,14 +52,14 @@ export function Header() {
             {/* Logo */}
             <Link
               href="/"
-              className="text-kuch-pink"
+              className="shrink-0 text-kuch-pink"
               aria-label="KUCH — на главную"
             >
               <Logo className="h-7 w-auto" />
             </Link>
 
             {/* Desktop nav */}
-            <nav className="hidden lg:flex items-center gap-6" aria-label="Основная навигация">
+            <nav className="hidden xl:flex items-center gap-6" aria-label="Основная навигация">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
@@ -72,7 +72,7 @@ export function Header() {
             </nav>
 
             {/* Language switcher + Desktop socials + CTAs */}
-            <div className="hidden lg:flex items-center gap-3">
+            <div className="hidden xl:flex items-center gap-3">
               {/* Language Switcher Pill */}
               <LanguageSwitcher className="mr-1" />
 
@@ -113,11 +113,11 @@ export function Header() {
             </div>
 
             {/* Mobile hamburger & language switcher */}
-            <div className="flex items-center gap-3 lg:hidden">
+            <div className="flex items-center gap-3 xl:hidden">
               <LanguageSwitcher size="sm" />
 
               <button
-                className="text-white p-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-kuch-pink"
+                className="min-h-11 min-w-11 text-white p-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-kuch-pink"
                 onClick={() => setMenuOpen(true)}
                 aria-label="Открыть меню"
                 aria-expanded={menuOpen}

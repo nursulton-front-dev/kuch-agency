@@ -32,7 +32,7 @@ export function BlogPageClient({ posts }: { posts: Article[] }) {
             <span className="font-display text-sm font-bold uppercase tracking-[0.2em] text-kuch-pink">
               {t.blog.badge}
             </span>
-            <h1 className="mt-3 font-display text-5xl font-black uppercase leading-[0.88] tracking-tight text-kuch-white sm:text-6xl md:text-7xl lg:text-8xl">
+            <h1 className="mt-3 font-display text-[clamp(1.5rem,8.9cqi,4.5rem)] font-black uppercase leading-[0.88] tracking-tight text-kuch-white xl:text-8xl">
               {lang === 'uz' ? (
                 <>
                   BILAMIZ —
@@ -70,7 +70,7 @@ export function BlogPageClient({ posts }: { posts: Article[] }) {
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <div className="flex flex-1 flex-col p-6">
+                  <div className="@container flex flex-1 flex-col p-5 xl:p-6">
                     <div className="flex flex-wrap items-center gap-2">
                       {article.tags.map(tag => (
                         <Tag key={tag} variant="pink">
@@ -78,13 +78,13 @@ export function BlogPageClient({ posts }: { posts: Article[] }) {
                         </Tag>
                       ))}
                     </div>
-                    <h2 className="mt-5 font-display text-2xl font-black uppercase leading-tight tracking-tight text-kuch-white transition-colors group-hover:text-kuch-pink">
+                    <h2 className="mt-5 font-display text-[clamp(1rem,6.6cqi,1.5rem)] font-black uppercase leading-tight tracking-tight text-kuch-white transition-colors group-hover:text-kuch-pink">
                       {article.title}
                     </h2>
                     <p className="mt-3 flex-1 font-sans text-sm text-kuch-white/70">
                       {article.excerpt}
                     </p>
-                    <div className="mt-6 flex items-center justify-between font-sans text-xs uppercase tracking-widest text-kuch-white/50">
+                    <div className="mt-6 flex flex-wrap items-center justify-between gap-2 font-sans text-xs uppercase tracking-widest text-kuch-white/50">
                       <span>{formatDate(article.date, lang)}</span>
                       <span>{article.readingMinutes} {t.blog.readingTime}</span>
                     </div>

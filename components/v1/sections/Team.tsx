@@ -18,9 +18,9 @@ export function Team() {
     <Section bg="black" id="team">
       <Container>
         <Reveal>
-          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div className="flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
             <div>
-              <h2 className="font-display text-5xl font-black uppercase leading-[0.9] tracking-tight text-kuch-white sm:text-6xl md:text-7xl">
+              <h2 className="font-display text-[clamp(2rem,10cqi,3rem)] font-black uppercase leading-[0.9] tracking-tight text-kuch-white sm:text-6xl md:text-7xl">
                 {lang === 'ru' ? (
                   <>
                     Наша
@@ -45,11 +45,9 @@ export function Team() {
         <ul className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-6">
           {teamMembers.map((member, i) => {
             const colSpan =
-              i < 2
+              i < 3
                 ? 'sm:col-span-3 lg:col-span-2'
-                : i === 2
-                ? 'sm:col-span-2 lg:col-span-2'
-                : 'sm:col-span-2 lg:col-span-3'
+                : 'sm:col-span-3 lg:col-span-3'
 
             const displayName = lang === 'uz' && member.name_uz ? member.name_uz : (member.name_ru || member.name_uz)
             const displayRole = lang === 'uz' && member.role_uz ? member.role_uz : (member.role_ru || member.role_uz)
@@ -57,7 +55,7 @@ export function Team() {
             return (
               <li key={member.id} className={colSpan}>
                 <Reveal delay={(i % 3) * 0.08}>
-                  <article className="group relative aspect-[3/4] overflow-hidden bg-kuch-black border border-white/10 transition-colors duration-300 hover:border-kuch-pink">
+                  <article className="@container group relative aspect-[3/4] overflow-hidden bg-kuch-black border border-white/10 transition-colors duration-300 hover:border-kuch-pink">
                     <Image
                       src={member.photo || '/images/team/mohitobon-kenjaeva.jpg'}
                       alt={`${displayName} — ${displayRole}, KUCH`}
@@ -71,7 +69,7 @@ export function Team() {
                     </span>
 
                     <div className="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-kuch-black/95 via-kuch-black/60 to-transparent p-5 pt-14">
-                      <h3 className="font-display text-xl font-black uppercase leading-tight tracking-tight text-kuch-white">
+                      <h3 className="font-display text-[clamp(1rem,6cqi,1.25rem)] font-black uppercase leading-tight tracking-tight text-kuch-white">
                         {displayName}
                       </h3>
                       <p className="mt-1 font-sans text-xs sm:text-sm uppercase tracking-widest text-kuch-pink">

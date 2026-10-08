@@ -328,7 +328,7 @@ export function BriefForm() {
       )}
 
       {/* Navigation buttons */}
-      <div className="flex gap-3 mt-2">
+      <div className="mt-2 flex flex-col gap-3 sm:flex-row">
         {step > 1 && (
           <Button type="button" variant="ghost" onClick={handleBack}>
             {t.brief.backBtn}

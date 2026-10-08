@@ -29,7 +29,7 @@ export function StickyCta() {
 
   return (
     <div
-      className="fixed bottom-6 right-6 z-40 flex items-center gap-2"
+      className="mx-4 mb-6 flex flex-col gap-3 sm:fixed sm:bottom-6 sm:right-6 sm:z-40 sm:m-0 sm:flex-row sm:items-center sm:gap-2"
       role="complementary"
       aria-label="Quick actions"
     >

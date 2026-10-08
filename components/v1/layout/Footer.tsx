@@ -38,7 +38,7 @@ export function Footer() {
     <footer className="bg-kuch-black border-t border-white/10 pt-16 pb-8">
       <Container>
         {/* Footer grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12 [&>div]:min-w-0">
           {/* Brand column */}
           <div>
             <p className="mb-3 text-kuch-pink">
@@ -124,6 +124,7 @@ export function Footer() {
               <li>
                 <a
                   href={`mailto:${email}`}
+                  style={{ overflowWrap: 'anywhere' }}
                   className="font-sans text-sm text-white/70 hover:text-kuch-pink transition-colors"
                 >
                   {email}

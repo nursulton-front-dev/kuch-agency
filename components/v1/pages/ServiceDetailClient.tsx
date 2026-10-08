@@ -58,7 +58,7 @@ export function ServiceDetailClient({ service }: { service: Service }) {
             </nav>
 
             <Tag variant="pink">{lang === 'uz' ? 'Xizmat' : 'Услуга'}</Tag>
-            <h1 className="mt-4 font-display text-4xl font-black uppercase leading-[0.9] tracking-tight text-kuch-white sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="mt-4 font-display text-[clamp(1.125rem,6.2cqi,4.5rem)] font-black uppercase leading-[1.05] tracking-tight text-kuch-white">
               {displayTitle}
             </h1>
             <p className="mt-6 max-w-2xl font-sans text-lg text-kuch-white/70">
@@ -76,7 +76,7 @@ export function ServiceDetailClient({ service }: { service: Service }) {
               )}
             </div>
 
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
               <Button variant="primary" href="/brief">
                 {t.serviceDetail.applyBtn}
               </Button>
@@ -154,7 +154,7 @@ export function ServiceDetailClient({ service }: { service: Service }) {
           <Reveal>
             <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div>
-                <h2 className="font-display text-4xl font-black uppercase tracking-tight text-kuch-black sm:text-5xl">
+                <h2 className="font-display text-[clamp(1.75rem,9cqi,3rem)] font-black uppercase tracking-tight text-kuch-black">
                   {lang === 'uz' ? 'Boshlashga tayyormisiz?' : 'Готовы начать?'}
                 </h2>
                 <p className="mt-2 font-sans text-base text-kuch-black/70">

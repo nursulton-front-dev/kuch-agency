@@ -61,7 +61,7 @@ export default function RatingPage() {
               <span className="font-display text-sm font-bold uppercase tracking-[0.2em] text-kuch-black/70">
                 Рейтинг
               </span>
-              <h1 className="mt-3 font-display text-5xl font-black uppercase leading-[0.88] tracking-tight text-kuch-black sm:text-6xl md:text-7xl lg:text-8xl">
+              <h1 className="mt-3 font-display text-[clamp(1.5rem,8.9cqi,6rem)] font-black uppercase leading-[0.88] tracking-tight text-kuch-black">
                 №1 — это
                 <br />
                 не случайность
@@ -111,19 +111,19 @@ export default function RatingPage() {
                 <li
                   key={entry.rank}
                   className={cn(
-                    'grid grid-cols-12 items-center gap-3 border-b-2 border-kuch-black py-5'
+                    'grid grid-cols-[auto_minmax(0,1fr)_auto] sm:grid-cols-12 items-center gap-3 border-b-2 border-kuch-black py-5'
                   )}
                 >
-                  <span className="col-span-2 font-display text-3xl font-black tabular-nums leading-none text-kuch-black sm:text-4xl">
+                  <span className="sm:col-span-2 font-display text-2xl font-black tabular-nums leading-none text-kuch-black sm:text-4xl">
                     0{entry.rank}
                   </span>
-                  <span className="col-span-6 font-display text-xl font-black uppercase tracking-tight text-kuch-black sm:text-2xl">
+                  <span className="sm:col-span-6 font-display text-base font-black uppercase tracking-tight text-kuch-black sm:text-2xl">
                     {entry.name}
                   </span>
-                  <span className="col-span-4 text-right font-display text-2xl font-black tabular-nums text-kuch-black sm:text-3xl">
+                  <span className="sm:col-span-4 text-right font-display text-2xl font-black tabular-nums text-kuch-black sm:text-3xl">
                     {entry.score.toFixed(1)}
                   </span>
-                  <span className="col-span-12 col-start-3 -mt-1 font-sans text-sm text-kuch-black/60">
+                  <span className="col-span-2 col-start-2 sm:col-span-10 sm:col-start-3 -mt-1 font-sans text-sm text-kuch-black/60">
                     {entry.note}
                   </span>
                 </li>

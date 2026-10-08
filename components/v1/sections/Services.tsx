@@ -40,12 +40,12 @@ export function Services() {
     <Section bg="pink" id="services">
       <Container>
         <Reveal>
-          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div className="flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
             <div>
               <span className="font-display text-sm font-bold uppercase tracking-[0.2em] text-kuch-black/70">
                 {t.services.tag}
               </span>
-              <h2 className="mt-3 font-display text-5xl font-black uppercase leading-[0.9] tracking-tight text-kuch-black sm:text-6xl md:text-7xl">
+              <h2 className="mt-3 font-display text-[clamp(2rem,10cqi,3rem)] font-black uppercase leading-[0.9] tracking-tight text-kuch-black sm:text-6xl md:text-7xl">
                 {lang === 'ru' ? (
                   <>
                     Что мы

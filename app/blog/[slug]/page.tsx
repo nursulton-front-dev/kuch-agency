@@ -106,7 +106,7 @@ export default async function ArticlePage({
                 </Tag>
               ))}
             </div>
-            <h1 className="mt-5 max-w-4xl font-display text-4xl font-black uppercase leading-[0.92] tracking-tight text-kuch-white sm:text-5xl md:text-6xl">
+            <h1 className="mt-5 max-w-4xl font-display text-[clamp(1.5rem,8cqi,3.75rem)] font-black uppercase leading-[1.05] tracking-tight text-kuch-white">
               {article.title}
             </h1>
             <div className="mt-6 flex items-center gap-4 font-sans text-sm uppercase tracking-widest text-kuch-white/50">

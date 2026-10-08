@@ -48,7 +48,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
       aria-label="Mobile Menu"
     >
       {/* Header row */}
-      <div className="flex items-center justify-between px-4 h-16 border-b border-white/10">
+      <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16 shrink-0 border-b border-white/10">
         <Link
           href="/"
           className="text-kuch-pink"
@@ -58,7 +58,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
           <Logo className="h-7 w-auto" />
         </Link>
         <button
-          className="text-white p-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-kuch-pink cursor-pointer"
+          className="min-h-11 min-w-11 text-white p-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-kuch-pink cursor-pointer"
           onClick={onClose}
           aria-label="Close"
         >
@@ -70,7 +70,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
       </div>
 
       {/* Nav links */}
-      <nav className="flex-1 overflow-y-auto px-4 py-8" aria-label="Mobile Navigation">
+      <nav className="min-h-0 flex-1 overflow-y-auto px-4 sm:px-6 lg:px-8 py-6" aria-label="Mobile Navigation">
         <ul className="space-y-2">
           {navItems.map((item) => (
             <li key={item.href}>

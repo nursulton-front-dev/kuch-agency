@@ -23,7 +23,7 @@ export function TalksPreview() {
           <div className="grid items-end gap-6 md:grid-cols-12">
             <div className="md:col-span-8">
               <div className="flex flex-wrap items-center gap-3">
-                <h2 className="font-display text-5xl font-black uppercase leading-[0.88] tracking-tight text-kuch-white sm:text-6xl md:text-7xl">
+                <h2 className="font-display text-[clamp(2rem,10cqi,3rem)] font-black uppercase leading-[0.88] tracking-tight text-kuch-white sm:text-6xl md:text-7xl">
                   {t.talks.tag}
                 </h2>
                 <span className="inline-flex items-center rounded-full bg-kuch-pink px-3.5 py-1 font-display text-xs font-black uppercase tracking-wider text-kuch-black sm:text-sm">

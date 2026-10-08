@@ -17,7 +17,7 @@ export function LayoutWrapper({ children }: { children: React.ReactNode }) {
   return (
     <div className="v1-scope flex min-h-screen flex-col bg-kuch-black text-white">
       <Header />
-      <main className="flex-grow pt-20">{children}</main>
+      <main className="min-w-0 flex-grow pt-16 lg:pt-20">{children}</main>
       <Footer />
       <StickyCta />
     </div>

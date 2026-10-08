@@ -15,13 +15,13 @@ export function BriefPageClient() {
   return (
     <Section bg="black" id="brief">
       <Container>
-        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-          <Reveal className="lg:col-span-5">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
+          <Reveal className="@container lg:col-span-5">
             <div>
               <span className="font-display text-sm font-bold uppercase tracking-[0.2em] text-kuch-pink">
                 {t.brief.pageTitle}
               </span>
-              <h1 className="mt-3 font-display text-5xl font-black uppercase leading-[0.86] tracking-tight text-kuch-white sm:text-6xl md:text-7xl">
+              <h1 className="mt-3 font-display text-[clamp(1.75rem,10cqi,4.5rem)] font-black uppercase leading-[0.86] tracking-tight text-kuch-white">
                 {lang === 'uz' ? (
                   <>
                     Vazifani

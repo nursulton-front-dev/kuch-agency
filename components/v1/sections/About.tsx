@@ -77,7 +77,7 @@ export function About() {
               <span className="font-display text-sm font-bold uppercase tracking-[0.2em] text-kuch-black">
                 {lang === 'uz' ? 'KUCH AGENTLIGI' : 'Idea'}
               </span>
-              <h2 className="mt-4 font-display text-[clamp(1.75rem,2.2vw,2.5rem)] font-black uppercase leading-[0.94] tracking-tight text-kuch-black">
+              <h2 className="mt-4 font-display text-[clamp(1.125rem,6.2cqi,1.75rem)] lg:text-[clamp(1.75rem,2.2vw,2.5rem)] font-black uppercase leading-[0.94] tracking-tight text-kuch-black">
                 {lang === 'uz' ? (
                   <>
                     HAR QANDAY
@@ -105,10 +105,10 @@ export function About() {
           </div>
         </Reveal>
 
-        <div className="mt-16 grid gap-px border-t-2 border-kuch-black md:mt-24 md:grid-cols-3 md:border-l-2">
+        <div className="mt-16 grid gap-px border-t-2 border-kuch-black md:mt-24 lg:grid-cols-3 lg:border-l-2">
           {pillars.map((p, i) => (
             <Reveal key={p.num} delay={i * 0.1}>
-              <div className="border-b-2 border-kuch-black px-1 py-8 md:h-full md:border-b-0 md:border-r-2 md:px-6 md:py-2">
+              <div className="border-b-2 border-kuch-black px-1 py-8 lg:h-full lg:border-b-0 lg:border-r-2 lg:px-6 lg:py-2">
                 <span className="block font-display text-6xl font-black leading-none text-kuch-pink sm:text-7xl">
                   {p.num}
                 </span>

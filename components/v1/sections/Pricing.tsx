@@ -17,12 +17,12 @@ export function Pricing() {
     <Section bg="blue" id="pricing">
       <Container>
         <Reveal>
-          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div className="flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
             <div>
               <span className="font-display text-sm font-bold uppercase tracking-[0.2em] text-kuch-black/70">
                 {lang === 'uz' ? 'NARXLAR' : 'ПРАЙС'}
               </span>
-              <h2 className="mt-3 font-display text-5xl font-black uppercase leading-[0.9] tracking-tight text-kuch-black sm:text-6xl md:text-7xl">
+              <h2 className="mt-3 font-display text-[clamp(2rem,10cqi,3rem)] font-black uppercase leading-[0.9] tracking-tight text-kuch-black sm:text-6xl md:text-7xl">
                 {lang === 'uz' ? (
                   <>
                     BU QANCHA
@@ -62,15 +62,15 @@ export function Pricing() {
                 <Link
                   key={row.slug}
                   href={`/services/${row.slug}`}
-                  className="group grid grid-cols-1 items-baseline gap-2 border-b-2 border-kuch-black px-4 py-5 transition-colors hover:bg-kuch-black sm:grid-cols-12 sm:gap-4 sm:px-6"
+                  className="group grid grid-cols-1 items-baseline gap-2 border-b-2 border-kuch-black px-4 py-5 transition-colors hover:bg-kuch-black lg:grid-cols-12 lg:gap-4 sm:px-6"
                 >
-                  <span className="font-display text-xl font-black uppercase tracking-tight text-kuch-black transition-colors group-hover:text-kuch-white sm:col-span-6 md:text-2xl">
+                  <span className="font-display text-[clamp(1rem,5.2cqi,1.25rem)] font-black uppercase tracking-tight text-kuch-black transition-colors group-hover:text-kuch-white lg:col-span-6 lg:text-2xl">
                     {displayTitle}
                   </span>
-                  <span className="font-display text-lg font-black tabular-nums text-kuch-black transition-colors group-hover:text-kuch-pink sm:col-span-4 sm:text-right md:text-xl">
+                  <span className="font-display text-lg font-black tabular-nums text-kuch-black transition-colors group-hover:text-kuch-pink lg:col-span-4 lg:text-right lg:text-xl">
                     {priceText}
                   </span>
-                  <span className="font-sans text-sm uppercase tracking-widest text-kuch-black/60 transition-colors group-hover:text-kuch-white/60 sm:col-span-2 sm:text-right">
+                  <span className="font-sans text-sm uppercase tracking-widest text-kuch-black/60 transition-colors group-hover:text-kuch-white/60 lg:col-span-2 lg:text-right">
                     {unitText}
                   </span>
                 </Link>

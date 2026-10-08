@@ -41,13 +41,13 @@ export function TrustedBy() {
 
       <Container>
         <Reveal>
-          <ul className="mt-12 grid grid-cols-2 gap-px overflow-hidden border-2 border-kuch-white/15 sm:grid-cols-3 lg:grid-cols-4">
+          <ul className="mt-12 grid grid-cols-1 min-[390px]:grid-cols-2 gap-px overflow-hidden border-2 border-kuch-white/15 sm:grid-cols-3 lg:grid-cols-4">
             {clients.map((client) => (
               <li
                 key={client.name}
                 className="flex items-center justify-center bg-kuch-white/5 px-4 py-8 transition-colors hover:bg-kuch-pink hover:text-kuch-black"
               >
-                <span className="text-center font-display text-lg font-black uppercase tracking-tight">
+                <span className="text-center font-display text-sm sm:text-lg font-black uppercase tracking-tight">
                   {client.name}
                 </span>
               </li>

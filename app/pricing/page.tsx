@@ -26,7 +26,7 @@ export default function PricingPage() {
             <span className="font-display text-sm font-bold uppercase tracking-[0.2em] text-kuch-black/70">
               Прайс-лист
             </span>
-            <h1 className="mt-3 font-display text-5xl font-black uppercase leading-[0.9] tracking-tight text-kuch-black sm:text-6xl md:text-7xl">
+            <h1 className="mt-3 font-display text-[clamp(2rem,10cqi,3rem)] font-black uppercase leading-[0.9] tracking-tight text-kuch-black sm:text-6xl md:text-7xl">
               Сколько
               <br />
               это стоит
@@ -46,10 +46,10 @@ export default function PricingPage() {
                 <Link
                   key={row.slug}
                   href={`/services/${row.slug}`}
-                  className="group grid grid-cols-1 items-start gap-2 border-b-2 border-kuch-black px-4 py-6 transition-colors hover:bg-kuch-black sm:grid-cols-12 sm:gap-4 sm:px-6"
+                  className="group grid grid-cols-1 items-start gap-2 border-b-2 border-kuch-black px-4 py-6 transition-colors hover:bg-kuch-black lg:grid-cols-12 lg:gap-4 sm:px-6"
                 >
-                  <div className="sm:col-span-6">
-                    <span className="font-display text-xl font-black uppercase tracking-tight text-kuch-black transition-colors group-hover:text-kuch-white md:text-2xl">
+                  <div className="lg:col-span-6">
+                    <span className="font-display text-[clamp(1rem,5.2cqi,1.25rem)] font-black uppercase tracking-tight text-kuch-black transition-colors group-hover:text-kuch-white lg:text-2xl">
                       {row.title}
                     </span>
                     {service && (
@@ -59,19 +59,19 @@ export default function PricingPage() {
                     )}
                   </div>
 
-                  <div className="sm:col-span-3 sm:text-right">
+                  <div className="lg:col-span-3 lg:text-right">
                     <span className="font-display text-lg font-black tabular-nums text-kuch-black transition-colors group-hover:text-kuch-pink md:text-xl">
                       {formatServicePrice({ priceFrom: row.from, onRequest: row.onRequest })}
                     </span>
                   </div>
 
-                  <div className="sm:col-span-2 sm:text-right">
+                  <div className="lg:col-span-2 lg:text-right">
                     <span className="font-sans text-sm uppercase tracking-widest text-kuch-black/60 transition-colors group-hover:text-kuch-white/60">
                       {row.onRequest ? '' : `/ ${unitLabel[row.unit]}`}
                     </span>
                   </div>
 
-                  <div className="hidden sm:col-span-1 sm:flex sm:justify-end sm:items-center">
+                  <div className="hidden lg:col-span-1 lg:flex lg:justify-end lg:items-center">
                     <span
                       aria-hidden="true"
                       className="font-display text-xl text-kuch-black transition-all duration-200 group-hover:text-kuch-pink group-hover:translate-x-1"
@@ -85,7 +85,7 @@ export default function PricingPage() {
           </div>
         </Reveal>
 
-        <div className="mt-12 flex flex-wrap gap-4">
+        <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
           <Button variant="dark" href="/brief">
             Онлайн бриф
           </Button>
@@ -99,7 +99,7 @@ export default function PricingPage() {
             <h2 className="font-display text-2xl font-black uppercase tracking-tight text-kuch-black sm:text-3xl">
               Как мы считаем цену
             </h2>
-            <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-3">
+            <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-3">
               {[
                 {
                   n: '01',
