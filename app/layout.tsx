@@ -4,6 +4,7 @@ import './globals.css'
 import { pageMetadata, organizationJsonLd } from '@/lib/seo'
 import { LanguageProvider } from '@/lib/context/LanguageContext'
 import { LayoutWrapper } from '@/components/v1/layout/LayoutWrapper'
+import { Analytics } from '@vercel/analytics/next'
 
 // v1 display: Unbounded
 const fontUnbounded = localFont({
@@ -56,6 +57,7 @@ export default function RootLayout({
         <LanguageProvider>
           <LayoutWrapper>{children}</LayoutWrapper>
         </LanguageProvider>
+        <Analytics />
       </body>
     </html>
   )
