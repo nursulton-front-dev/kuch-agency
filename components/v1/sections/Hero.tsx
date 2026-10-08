@@ -50,16 +50,16 @@ export function Hero() {
   }, [formOpen, close])
 
   return (
-    <section className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden bg-kuch-black pt-8 pb-10 md:pt-12">
-      {/* Oversized KUCH backdrop letterform — official SVG logo watermark */}
+    <section className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden bg-kuch-black pt-8 pb-10 md:pt-12 w-full max-w-full">
+      {/* Oversized KUCH backdrop letterform — enlarged official SVG logo watermark */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[48%] select-none text-kuch-pink/15 w-[115vw] max-w-[1400px] min-w-[320px] px-4 flex items-center justify-center overflow-hidden"
+        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[48%] select-none text-kuch-pink/15 w-[140vw] max-w-[1800px] min-w-[320px] px-4 flex items-center justify-center overflow-hidden"
       >
-        <Logo className="w-full h-auto opacity-75" />
+        <Logo className="w-full h-auto opacity-80" />
       </div>
 
-      <Container className="relative z-10 flex flex-1 flex-col justify-center gap-8 md:gap-10">
+      <Container className="relative z-10 flex flex-1 flex-col justify-center gap-8 md:gap-10 max-w-full overflow-hidden">
         {/* Eyebrow: cycling discipline word */}
         <div className="flex items-center gap-4">
           <span className="h-3 w-3 shrink-0 bg-kuch-pink" aria-hidden="true" />
@@ -68,27 +68,27 @@ export function Hero() {
           </span>
         </div>
 
-        {/* Slogan as knockout poster bars — 100% responsive on all mobile screens */}
+        {/* Slogan as knockout poster bars — 100% responsive without horizontal overflow */}
         <h1 className="font-display font-black uppercase leading-[0.85] md:leading-[0.82] tracking-tight text-kuch-white max-w-full overflow-hidden">
           <span className="sr-only">{t.hero.heading}</span>
           <span aria-hidden="true" className="block max-w-full">
             {lang === 'uz' ? (
               <>
-                <span className="block text-[clamp(2.1rem,9.5vw,8rem)]">BIZ</span>
-                <span className="mt-1 inline-block bg-kuch-pink px-2.5 py-1 text-[clamp(1.35rem,6.5vw,6rem)] text-kuch-black md:px-6 max-w-full">
+                <span className="block text-[clamp(1.75rem,8.5vw,8rem)]">BIZ</span>
+                <span className="mt-1 inline-block bg-kuch-pink px-2 py-0.5 text-[clamp(1.1rem,5vw,6rem)] text-kuch-black md:px-6 max-w-full">
                   QIYINCHILIKLARDAN
                 </span>
-                <span className="mt-1 block text-[clamp(2.1rem,9.5vw,8rem)]">
+                <span className="mt-1 block text-[clamp(1.75rem,8.5vw,8rem)]">
                   {"QO'RQMAYMIZ"}
                 </span>
               </>
             ) : (
               <>
-                <span className="block text-[clamp(2.1rem,9.5vw,9rem)]">МЫ НЕ</span>
-                <span className="mt-1 inline-block bg-kuch-pink px-2.5 py-1 text-[clamp(2.1rem,9.5vw,9rem)] text-kuch-black md:px-6 max-w-full">
+                <span className="block text-[clamp(1.65rem,8vw,9rem)]">МЫ НЕ</span>
+                <span className="mt-1 inline-block bg-kuch-pink px-2 py-0.5 text-[clamp(1.65rem,8vw,9rem)] text-kuch-black md:px-6 max-w-full">
                   БОИМСЯ
                 </span>
-                <span className="mt-1 block text-[clamp(2.1rem,9.5vw,9rem)]">
+                <span className="mt-1 block text-[clamp(1.65rem,8vw,9rem)]">
                   СЛОЖНОГО
                 </span>
               </>
@@ -96,7 +96,7 @@ export function Hero() {
           </span>
         </h1>
 
-        <p className="max-w-2xl font-sans text-base text-kuch-white/80 sm:text-xl md:text-2xl leading-relaxed">
+        <p className="max-w-2xl font-sans text-base text-kuch-white/80 sm:text-xl md:text-2xl leading-relaxed break-words">
           {t.hero.subheading}
         </p>
 
@@ -111,7 +111,7 @@ export function Hero() {
       </Container>
 
       {/* Marquee strip */}
-      <div className="relative z-10 mt-10 border-y-2 border-kuch-white/15 py-4">
+      <div className="relative z-10 mt-10 border-y-2 border-kuch-white/15 py-4 overflow-hidden">
         <Marquee
           items={MARQUEE_ITEMS}
           className="font-display text-2xl font-black uppercase tracking-wide text-kuch-white sm:text-3xl md:text-4xl"
