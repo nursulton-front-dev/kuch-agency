@@ -50,11 +50,11 @@ export function Hero() {
 
   return (
     <section className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden bg-kuch-black pt-8 pb-10 md:pt-12">
-      {/* Oversized KUCH backdrop letterform — enlarged full screen graphic watermark */}
+      {/* Oversized KUCH backdrop letterform — graphic watermark */}
       <span
         aria-hidden="true"
         className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[50%] select-none font-display font-black leading-none tracking-tighter text-kuch-pink/15 whitespace-nowrap block"
-        style={{ fontSize: 'clamp(18rem, 45vw, 60rem)' }}
+        style={{ fontSize: 'clamp(13rem, 31vw, 40rem)' }}
       >
         KUCH
       </span>
