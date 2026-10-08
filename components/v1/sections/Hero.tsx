@@ -4,7 +4,7 @@ import React, { useState, useEffect, useCallback } from 'react'
 import { Container } from '@/components/v1/ui/Container'
 import { Button } from '@/components/v1/ui/Button'
 import { Marquee } from '@/components/v1/ui/Marquee'
-import { Logo } from '@/components/v1/ui/Logo'
+import { LogoCycle } from '@/components/v1/ui/LogoCycle'
 import dynamic from 'next/dynamic'
 import { useLanguage } from '@/lib/context/LanguageContext'
 import { useTranslation } from '@/lib/translations'
@@ -50,20 +50,21 @@ export function Hero() {
 
   return (
     <section className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden bg-kuch-black pt-8 pb-10 md:pt-12">
-      {/* Oversized KUCH backdrop letterform — official SVG logo watermark */}
-      <div
+      {/* Oversized KUCH backdrop letterform — enlarged full screen graphic watermark */}
+      <span
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[48%] select-none text-kuch-pink/15 w-[140vw] sm:w-[130vw] md:w-[128vw] md:min-w-[1100px] flex items-center justify-center overflow-visible"
+        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[50%] select-none font-display font-black leading-none tracking-tighter text-kuch-pink/15 whitespace-nowrap block"
+        style={{ fontSize: 'clamp(18rem, 45vw, 60rem)' }}
       >
-        <Logo className="w-full h-auto opacity-80" />
-      </div>
+        KUCH
+      </span>
 
       <Container className="relative z-10 flex flex-1 flex-col justify-center gap-10">
-        {/* Eyebrow badge */}
+        {/* Eyebrow: cycling discipline word */}
         <div className="flex items-center gap-4">
           <span className="h-3 w-3 shrink-0 bg-kuch-pink" aria-hidden="true" />
           <span className="font-display text-base font-bold uppercase tracking-[0.2em] text-kuch-white sm:text-lg">
-            KUCH
+            <LogoCycle className="text-kuch-pink" />
           </span>
         </div>
 
@@ -73,21 +74,21 @@ export function Hero() {
           <span aria-hidden="true">
             {lang === 'uz' ? (
               <>
-                <span className="block text-[clamp(1.85rem,8.5vw,8rem)]">BIZ</span>
-                <span className="mt-1 inline-block bg-kuch-pink px-3 py-1 text-[clamp(1.65rem,7.5vw,6rem)] text-kuch-black md:px-6">
+                <span className="block text-[clamp(2.5rem,10vw,8rem)]">BIZ</span>
+                <span className="mt-1 inline-block bg-kuch-pink px-3 py-1 text-[clamp(2rem,7vw,6rem)] text-kuch-black md:px-6">
                   QIYINCHILIKLARDAN
                 </span>
-                <span className="mt-1 block text-[clamp(1.85rem,8.5vw,8rem)]">
+                <span className="mt-1 block text-[clamp(2.5rem,10vw,8rem)]">
                   {"QO'RQMAYMIZ"}
                 </span>
               </>
             ) : (
               <>
-                <span className="block text-[clamp(1.85rem,9.5vw,9rem)]">МЫ НЕ</span>
-                <span className="mt-1 inline-block bg-kuch-pink px-2.5 py-1 text-[clamp(1.85rem,9.5vw,9rem)] text-kuch-black md:px-6">
+                <span className="block text-[clamp(2.75rem,11vw,9rem)]">МЫ НЕ</span>
+                <span className="mt-1 inline-block bg-kuch-pink px-3 py-1 text-[clamp(2.75rem,11vw,9rem)] text-kuch-black md:px-6">
                   БОИМСЯ
                 </span>
-                <span className="mt-1 block text-[clamp(1.85rem,9.5vw,9rem)]">
+                <span className="mt-1 block text-[clamp(2.75rem,11vw,9rem)]">
                   СЛОЖНОГО
                 </span>
               </>
