@@ -41,8 +41,8 @@ export interface TalkAdminItem {
   id: string
   title_ru: string
   title_uz: string
-  speaker_ru?: string
-  speaker_uz?: string
+  speaker_ru: string
+  speaker_uz: string
   duration: string
   video_url: string
   video?: string
@@ -227,8 +227,8 @@ const initialTalks: TalkAdminItem[] = [
     id: 'talk-1',
     title_ru: 'Как построить бренд с нуля в 2026 году',
     title_uz: '2026 yilda brendni noldan qanday qurish kerak',
-    speaker_ru: '',
-    speaker_uz: '',
+    speaker_ru: 'Мохитобон Кенджаева',
+    speaker_uz: 'Mohitobon Kenjaeva',
     duration: '42:18',
     video_url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     cover: '/images/talks/talk-01.jpg',
@@ -237,8 +237,8 @@ const initialTalks: TalkAdminItem[] = [
     id: 'talk-2',
     title_ru: 'Performance vs Brand: где найти баланс',
     title_uz: 'Performance vs Brand: muvozanatni qayerdan topish kerak',
-    speaker_ru: '',
-    speaker_uz: '',
+    speaker_ru: 'Алишер Мамадалиев',
+    speaker_uz: 'Alisher Mamadaliyev',
     duration: '38:55',
     video_url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     cover: '/images/talks/talk-02.jpg',
@@ -247,8 +247,8 @@ const initialTalks: TalkAdminItem[] = [
     id: 'talk-3',
     title_ru: 'Визуальная идентичность: больше чем логотип',
     title_uz: 'Vizual ayniyat: logotipdan ko‘ra ko‘proq narsa',
-    speaker_ru: '',
-    speaker_uz: '',
+    speaker_ru: 'Азиз Азизов',
+    speaker_uz: 'Aziz Azizov',
     duration: '51:22',
     video_url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     cover: '/images/talks/talk-03.jpg',

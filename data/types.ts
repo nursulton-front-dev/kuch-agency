@@ -53,7 +53,7 @@ export interface Talk {
   id?: string
   title: string
   title_uz?: string
-  guest?: string
+  guest: string
   guest_uz?: string
   poster: string
   video?: string

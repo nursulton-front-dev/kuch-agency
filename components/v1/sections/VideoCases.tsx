@@ -7,6 +7,7 @@ import { Section } from '@/components/v1/ui/Section'
 import { Container } from '@/components/v1/ui/Container'
 import { Button } from '@/components/v1/ui/Button'
 import { Reveal } from '@/components/v1/ui/Reveal'
+import { ManifestoPlayer } from '@/components/v1/sections/ManifestoPlayer'
 import { getStoredCases, type CaseAdminItem } from '@/lib/adminStorage'
 import { useLanguage } from '@/lib/context/LanguageContext'
 import { useTranslation } from '@/lib/translations'
@@ -33,6 +34,12 @@ export function VideoCases() {
                 <span className="text-kuch-pink">KUCH</span>
               </h2>
             </div>
+          </div>
+        </Reveal>
+
+        <Reveal>
+          <div className="mt-12">
+            <ManifestoPlayer />
           </div>
         </Reveal>
 

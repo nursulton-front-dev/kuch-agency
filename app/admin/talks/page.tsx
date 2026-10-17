@@ -71,8 +71,8 @@ export default function AdminTalksPage() {
     setFormData({
       title_ru: item.title_ru,
       title_uz: item.title_uz,
-      speaker_ru: item.speaker_ru || '',
-      speaker_uz: item.speaker_uz || '',
+      speaker_ru: item.speaker_ru,
+      speaker_uz: item.speaker_uz,
       duration: item.duration,
       video_url: item.video_url,
       cover: item.cover,
@@ -135,10 +135,10 @@ export default function AdminTalksPage() {
 
   const filteredTalks = talksList.filter(
     (t) =>
-      (t.title_ru || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (t.title_uz || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (t.speaker_ru || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (t.speaker_uz || '').toLowerCase().includes(searchQuery.toLowerCase())
+      t.title_ru.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      t.title_uz.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      t.speaker_ru.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      t.speaker_uz.toLowerCase().includes(searchQuery.toLowerCase())
   )
 
   return (
@@ -234,12 +234,10 @@ export default function AdminTalksPage() {
 
             <div className="p-5 space-y-3 flex-1 flex flex-col justify-between">
               <div>
-                {Boolean(talk.speaker_ru || talk.speaker_uz) && (
-                  <div className="flex items-center gap-1.5 text-xs text-[#FF007A] font-semibold mb-1">
-                    <User className="w-3.5 h-3.5" />
-                    <span>{talk.speaker_ru || talk.speaker_uz}</span>
-                  </div>
-                )}
+                <div className="flex items-center gap-1.5 text-xs text-[#FF007A] font-semibold mb-1">
+                  <User className="w-3.5 h-3.5" />
+                  <span>{talk.speaker_ru || talk.speaker_uz}</span>
+                </div>
 
                 <h3 className="text-base font-bold text-white group-hover:text-[#FF007A] transition-colors leading-snug">
                   {talk.title_ru || talk.title_uz}
@@ -263,7 +261,7 @@ export default function AdminTalksPage() {
       <DrawerModal
         isOpen={isDrawerOpen}
         title={editingTalk ? 'Редактировать выпуск' : 'Добавить выпуск KUCH Talks'}
-        subtitle="Заполните параметры видеовыпуска (спикер не обязателен)"
+        subtitle="Заполните параметры видеовыпуска и информацию о спикере"
         showLangToggle
         currentLang={currentLang}
         onLangChange={setCurrentLang}
@@ -326,7 +324,7 @@ export default function AdminTalksPage() {
 
               <div className="space-y-1.5">
                 <label className="block text-xs font-semibold uppercase tracking-wider text-white/70">
-                  Имя спикера / Гостя (RU) (необязательно)
+                  Имя спикера / Гостя (RU)
                 </label>
                 <input
                   type="text"
@@ -356,7 +354,7 @@ export default function AdminTalksPage() {
 
               <div className="space-y-1.5">
                 <label className="block text-xs font-semibold uppercase tracking-wider text-white/70">
-                  Spiker / Mehmon Ismi (UZ) (ixtiyoriy)
+                  Spiker / Mehmon Ismi (UZ)
                 </label>
                 <input
                   type="text"

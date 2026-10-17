@@ -1,13 +1,12 @@
 import type { Metadata } from 'next'
 import { pageMetadata, websiteJsonLd } from '@/lib/seo'
 import { Hero } from '@/components/v1/sections/Hero'
-import { ManifestoPlayer } from '@/components/v1/sections/ManifestoPlayer'
-import { VideoCases } from '@/components/v1/sections/VideoCases'
 import { About } from '@/components/v1/sections/About'
 import { Team } from '@/components/v1/sections/Team'
 import { Services } from '@/components/v1/sections/Services'
 import { Pricing } from '@/components/v1/sections/Pricing'
 import { TrustedBy } from '@/components/v1/sections/TrustedBy'
+import { VideoCases } from '@/components/v1/sections/VideoCases'
 import { BlogPreview } from '@/components/v1/sections/BlogPreview'
 import { TalksPreview } from '@/components/v1/sections/TalksPreview'
 import { ContactCta } from '@/components/v1/sections/ContactCta'
@@ -29,13 +28,12 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }}
       />
       <Hero />
-      <ManifestoPlayer />
-      <VideoCases />
       <About />
       <Team />
       <Services />
       <Pricing />
       <TrustedBy />
+      <VideoCases />
       <BlogPreview />
       <TalksPreview />
       <ContactCta />

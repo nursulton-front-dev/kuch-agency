@@ -13,7 +13,6 @@ export async function submitLead(payload: LeadPayload): Promise<SubmitResult> {
   }
 
   try {
-    // 1. Сохранение в Supabase (при наличии конфигурации)
     if (
       process.env.NEXT_PUBLIC_SUPABASE_URL &&
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY &&
@@ -38,21 +37,6 @@ export async function submitLead(payload: LeadPayload): Promise<SubmitResult> {
     }
   } catch (err) {
     console.error('[submitLead exception]', err)
-  }
-
-  try {
-    // 2. Отправка на почту через серверный PHP обработчик (/send.php)
-    if (typeof window !== 'undefined' && window.location?.origin && window.location.origin !== 'null') {
-      await fetch('/send.php', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      })
-    }
-  } catch (err) {
-    console.warn('[submitLead email fetch warning]', err)
   }
 
   console.log('[submitLead success]', payload)
