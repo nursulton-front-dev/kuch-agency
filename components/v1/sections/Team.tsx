@@ -60,8 +60,10 @@ export function Team() {
                       src={member.photo || '/images/team/mohitobon-kenjaeva.jpg'}
                       alt={`${displayName} — ${displayRole}, KUCH`}
                       fill
-                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                      className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      unoptimized={true}
+                      priority={i < 3}
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="w-full h-full object-cover object-top grayscale contrast-[1.08] brightness-[0.98] transition-transform duration-500 group-hover:scale-105"
                     />
 
                     <span className="absolute left-4 top-4 z-10 font-display text-sm font-black uppercase tracking-tight text-kuch-white">

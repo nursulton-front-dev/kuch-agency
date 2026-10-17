@@ -40,14 +40,13 @@ export function TalksPreview() {
         <ul className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {talksList.map((talk, i) => {
             const displayTitle = lang === 'uz' && talk.title_uz ? talk.title_uz : (talk.title_ru || talk.title_uz)
-            const displaySpeaker = lang === 'uz' && talk.speaker_uz ? talk.speaker_uz : (talk.speaker_ru || talk.speaker_uz)
 
             return (
               <li key={talk.id}>
                 <Reveal delay={(i % 3) * 0.08} className="h-full">
                   <Link
                     href="/kuch-talks"
-                    aria-label={`${displayTitle} — ${displaySpeaker}`}
+                    aria-label={displayTitle}
                     className="group flex h-full flex-col border-2 border-kuch-white/15 bg-kuch-black transition-colors duration-300 hover:border-kuch-pink"
                   >
                     <div className="relative aspect-video w-full overflow-hidden bg-kuch-blue">
@@ -85,9 +84,6 @@ export function TalksPreview() {
                       <h3 className="font-display text-lg font-black uppercase leading-tight tracking-tight text-kuch-white">
                         {displayTitle}
                       </h3>
-                      <p className="mt-3 font-sans text-sm uppercase tracking-widest text-kuch-pink">
-                        {displaySpeaker}
-                      </p>
                     </div>
                   </Link>
                 </Reveal>

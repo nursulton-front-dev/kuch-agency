@@ -211,7 +211,7 @@ export default function AdminTeamPage() {
                 <img
                   src={member.photo || '/images/team/mohitobon-kenjaeva.jpg'}
                   alt={member.name_ru}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover grayscale contrast-[1.08] brightness-[0.98] group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
 

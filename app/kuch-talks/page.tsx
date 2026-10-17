@@ -30,7 +30,7 @@ export default function KuchTalksPage() {
             __html: JSON.stringify(
               videoJsonLd({
                 name: talk.title,
-                description: `Kuch Talks — выпуск с гостем: ${talk.guest}. ${talk.title}.`,
+                description: `Kuch Talks — ${talk.title}.`,
                 thumbnail: talk.poster,
                 path: '/kuch-talks',
               })
