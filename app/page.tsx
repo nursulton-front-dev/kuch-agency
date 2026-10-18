@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { pageMetadata, websiteJsonLd } from '@/lib/seo'
 import { Hero } from '@/components/v1/sections/Hero'
+import { ManifestoPlayer } from '@/components/v1/sections/ManifestoPlayer'
 import { About } from '@/components/v1/sections/About'
 import { Team } from '@/components/v1/sections/Team'
 import { Services } from '@/components/v1/sections/Services'
@@ -28,6 +29,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }}
       />
       <Hero />
+      <ManifestoPlayer />
       <About />
       <Team />
       <Services />

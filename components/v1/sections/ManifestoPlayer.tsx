@@ -1,6 +1,9 @@
 'use client'
 
 import React, { useEffect, useRef } from 'react'
+import { Section } from '@/components/v1/ui/Section'
+import { Container } from '@/components/v1/ui/Container'
+import { Reveal } from '@/components/v1/ui/Reveal'
 import { manifesto } from '@/data/manifesto'
 import { cn } from '@/lib/utils'
 import { useLanguage, type Language } from '@/lib/context/LanguageContext'
@@ -40,7 +43,10 @@ export function ManifestoPlayer() {
   }, [lang])
 
   return (
-    <div className="relative overflow-hidden border-2 border-kuch-white/15 bg-kuch-black">
+    <Section bg="black" id="manifesto" className="pt-8 pb-12 md:pt-12 md:pb-16">
+      <Container>
+        <Reveal>
+          <div className="relative overflow-hidden border-2 border-kuch-white/15 bg-kuch-black">
       <div className="relative aspect-video w-full bg-kuch-black">
         <video
           key={lang}
@@ -89,5 +95,8 @@ export function ManifestoPlayer() {
         </div>
       </div>
     </div>
+        </Reveal>
+      </Container>
+    </Section>
   )
 }
