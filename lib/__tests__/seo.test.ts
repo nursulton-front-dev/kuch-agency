@@ -1,9 +1,9 @@
 import { pageMetadata, organizationJsonLd, serviceJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/lib/seo'
 import { site } from '@/data/site'
 
-test('pageMetadata sets canonical + OG', () => {
+test('pageMetadata sets canonical + OG and formats title with KUCH Group', () => {
   const m = pageMetadata({ title:'T', description:'D', path:'/x' })
-  expect(m.title).toContain('T')
+  expect(m.title).toBe('KUCH Group — T')
   expect(m.alternates?.canonical).toBe(site.url + '/x')
   expect(m.openGraph?.url).toBe(site.url + '/x')
 })

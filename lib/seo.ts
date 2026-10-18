@@ -10,7 +10,18 @@ export function pageMetadata(input: {
   const { title, description, path, ogImage = '/og/default.png' } = input
   const canonical = site.url + path
 
-  const formattedTitle = title.startsWith('KUCH') ? title : `KUCH — ${title}`
+  let formattedTitle: string
+  if (title.startsWith('KUCH Group')) {
+    formattedTitle = title
+  } else if (title.startsWith('KUCH ×')) {
+    formattedTitle = title.replace('KUCH ×', 'KUCH Group ×')
+  } else if (title.startsWith('KUCH —') || title.startsWith('KUCH -')) {
+    formattedTitle = title.replace(/^KUCH\s*[-—]\s*/, 'KUCH Group — ')
+  } else if (title === 'KUCH') {
+    formattedTitle = 'KUCH Group'
+  } else {
+    formattedTitle = `KUCH Group — ${title}`
+  }
 
   return {
     metadataBase: new URL(site.url),

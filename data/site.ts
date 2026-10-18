@@ -1,10 +1,10 @@
 import type { SiteConfig } from './types'
 
 export const site: SiteConfig = {
-  name: 'KUCH',
+  name: 'KUCH Group',
   url: 'https://kuchgroup.uz',
   description:
-    'KUCH — маркетинговое агентство полного цикла. Маркетинговые стратегии, брендинг и рекламные кампании. МЫ НЕ БОИМСЯ СЛОЖНОГО.',
+    'KUCH Group — маркетинговое агентство полного цикла. Маркетинговые стратегии, брендинг и рекламные кампании. МЫ НЕ БОИМСЯ СЛОЖНОГО.',
   socials: {
     instagram: 'https://www.instagram.com/kuch_group/',
     telegram: 'https://t.me/kuchaloqada',
