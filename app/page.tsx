@@ -12,7 +12,7 @@ import { TalksPreview } from '@/components/v1/sections/TalksPreview'
 import { ContactCta } from '@/components/v1/sections/ContactCta'
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Маркетинговое агентство полного цикла',
+  title: 'KUCH Group',
   description:
     'KUCH Group — маркетинговое агентство полного цикла. Маркетинговая стратегия, брендинг, рекламные кампании и аутсорс-маркетинг. Берёмся за сложное. МЫ НЕ БОИМСЯ СЛОЖНОГО.',
   path: '/',

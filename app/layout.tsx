@@ -29,7 +29,7 @@ const fontGolos = localFont({
 })
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Маркетинговое агентство полного цикла',
+  title: 'KUCH Group',
   description:
     'KUCH Group — маркетинговое агентство полного цикла. Маркетинговые стратегии, брендинг и рекламные кампании. МЫ НЕ БОИМСЯ СЛОЖНОГО.',
   path: '/',
