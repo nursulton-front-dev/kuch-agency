@@ -37,7 +37,6 @@ export function KuchTalksClient() {
         <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {talksList.map((talk, i) => {
             const displayTitle = lang === 'uz' && talk.title_uz ? talk.title_uz : (talk.title_ru || talk.title_uz)
-            const displaySpeaker = lang === 'uz' && talk.speaker_uz ? talk.speaker_uz : (talk.speaker_ru || talk.speaker_uz)
 
             return (
               <li key={talk.id}>
@@ -70,9 +69,6 @@ export function KuchTalksClient() {
                       <h2 className="font-display text-lg font-black uppercase leading-tight tracking-tight text-kuch-white">
                         {displayTitle}
                       </h2>
-                      <p className="mt-3 font-sans text-sm uppercase tracking-widest text-kuch-pink">
-                        {displaySpeaker}
-                      </p>
                     </div>
                   </article>
                 </Reveal>
